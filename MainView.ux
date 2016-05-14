@@ -1,0 +1,20 @@
+<App Theme="Basic" Background="#eee">
+	<JavaScript File="MainView.js" />
+	<PageControl Active="{activePage}">
+		<!-- <Page ux:Name="Intro">
+			<Intro />
+		</Page> -->
+		<Page ux:Name="Login">
+			<Login />
+		</Page>
+		<Page ux:Name="LoginSetInterests">
+			<LoginSetInterests />
+		</Page>
+		<Page ux:Name="QuestionFeed">
+			<QuestionFeed />
+		</Page>
+		<Page ux:Name="CreateQuestion">
+			<CreateQuestion />
+		</Page>
+	</PageControl>
+</App>

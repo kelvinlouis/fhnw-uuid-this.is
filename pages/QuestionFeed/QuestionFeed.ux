@@ -1,0 +1,17 @@
+<StackPanel ux:Class="QuestionFeed">
+  <WrapPanel>
+    <Rectangle>
+      <WrapPanel>
+        <Tag Text="Food" />
+        <Tag Text="Japan" />
+        <Tag Text="Travel" />
+      </WrapPanel>
+    </Rectangle>
+    <Button Text="Ask">
+      <Clicked>
+        <Callback Handler="{createQuestion}" />
+      </Clicked>
+    </Button>
+  </WrapPanel>
+  <QuestionItem></QuestionItem>
+</StackPanel>

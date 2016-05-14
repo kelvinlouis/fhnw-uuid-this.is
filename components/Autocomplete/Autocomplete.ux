@@ -1,0 +1,7 @@
+<StackPanel ux:Class="Autocomplete">
+  <JavaScript File="Autocomplete.js" />
+  
+  <TextInput ValueChanged="{valueChanged}" />
+  <StackPanel>
+  </StackPanel>
+</StackPanel>

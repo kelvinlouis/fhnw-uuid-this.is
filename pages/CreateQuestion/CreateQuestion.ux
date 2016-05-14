@@ -1,0 +1,3 @@
+<Panel ux:Class="CreateQuestion">
+  <Text>Create Question</Text>
+</Panel>

@@ -1,0 +1,36 @@
+<StackPanel ux:Class="Login">
+  <Text>this.is</Text>
+
+  <Button Text="Login with Twitter">
+    <Clicked>
+      <Set facebookSuccess.Visibility="Hidden" />
+      <Set twitterSuccess.Visibility="Visible" />
+    </Clicked>  
+  </Button>
+
+  <Button Text="Login with Facebook">
+    <Clicked>
+      <Set facebookSuccess.Visibility="Visible" />
+      <Set twitterSuccess.Visibility="Hidden" />
+    </Clicked>  
+  </Button>
+  <Text>by logging in you accept the TOC</Text>
+
+  <Panel ux:Name="facebookSuccess" Visibility="Hidden">
+    <Rectangle Color="Red" Height="100" Width="100">
+      <Clicked>
+        <Callback Handler="{completeLogin}" />
+      </Clicked>
+    </Rectangle>
+  </Panel>
+
+  <Panel ux:Name="twitterSuccess" Visibility="Hidden">
+    <Rectangle Color="Blue" Height="100" Width="100">
+      <Clicked>
+        <Callback Handler="{completeLogin}" />
+      </Clicked>
+    </Rectangle>
+  </Panel>
+  <JavaScript>
+  </JavaScript>
+</StackPanel>

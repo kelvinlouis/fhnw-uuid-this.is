@@ -1,0 +1,25 @@
+<Rectangle ux:Class="Tag" Fill="#CCC" Margin="3" Alignment="Center">
+  <JavaScript File="Tag.js" />
+
+  <string ux:Property="Text" />
+  <WrapPanel>
+    <Text>#</Text>
+    <Text Value="{Property this.Text}" />
+  </WrapPanel>
+  <WhileTrue Value="{selected}">
+    <Change this.Fill="#FFF" />
+    <RaiseUserEvent Name="TagToggle">
+      <UserEventArg Name="name" StringValue="{Property this.Text}" />
+      <UserEventArg Name="selected" BoolValue="true" />
+    </RaiseUserEvent>
+  </WhileTrue>
+  <WhileFalse Value="{selected}">
+    <RaiseUserEvent Name="TagToggle">
+      <UserEventArg Name="name" StringValue="{Property this.Text}" />
+      <UserEventArg Name="selected" BoolValue="false" />
+    </RaiseUserEvent>
+  </WhileFalse>
+  <Clicked>
+    <Callback Handler="{selectedTag}" />
+  </Clicked>
+</Rectangle>
