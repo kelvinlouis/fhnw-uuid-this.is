@@ -39,6 +39,10 @@ module.exports = {
     activeQuestion.value = {};
   },
 
+  goToQuestion: function() {
+    activePage.value = 'question';
+  },
+
   selectedQuestion: function(args) {
     activeQuestion.value = args.data;
     activePage.value = args.data.handle;

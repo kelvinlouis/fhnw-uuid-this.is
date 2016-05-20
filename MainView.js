@@ -1,5 +1,5 @@
 var Observable = require('FuseJS/Observable'),
-    activePage = Observable('QuestionFeed');
+    activePage = Observable('Questions');
 
   module.exports = {
     // Simple Callback-Routing

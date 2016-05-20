@@ -2,7 +2,7 @@
   <Grid Columns="80,1*,30" Alignment="Top" Height="60">
     <IconChevronLeft FontSize="30" TextColor="#FFF" Alignment="VerticalCenter">
       <Clicked>
-        <GoBack  />
+        <Callback Handler="{goBack}" />
       </Clicked>
     </IconChevronLeft>
     <Text Value="Question" FontSize="20" TextColor="LightGray" Alignment="VerticalCenter"/>

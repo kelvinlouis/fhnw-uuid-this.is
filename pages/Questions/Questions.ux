@@ -1,0 +1,41 @@
+<Panel ux:Class="Questions">
+  <JavaScript File="Questions.js" />
+  <FileImageSource ux:Key="image1" File="../../Assets/Questions/ramen.jpg" />
+  <FileImageSource ux:Key="image2" File="../../Assets/Questions/japan.jpg" />
+  
+  <DockPanel>
+    <TopBar Dock="Top" />
+
+    <DirectNavigation ux:Name="nav" Active="{activePage}" />
+
+    <Page ux:Name="feed" Background="#FFF">
+      <QuestionFeed />
+      <EnteringAnimation>
+        <Move X="1" RelativeTo="ParentSize" />
+      </EnteringAnimation>
+      <ExitingAnimation>
+        <Move X="-1" RelativeTo="ParentSize" />
+      </ExitingAnimation>
+    </Page>
+  
+    <Page ux:Name="question" Background="#FFF">
+      <Question />
+      <EnteringAnimation>
+        <Move X="1" RelativeTo="ParentSize" />
+      </EnteringAnimation>
+      <ExitingAnimation>
+        <Move X="-1" RelativeTo="ParentSize" />
+      </ExitingAnimation>
+    </Page>
+
+    <Page ux:Name="createQuestion" Background="#FFF">
+      <CreateQuestion />
+      <EnteringAnimation>
+        <Move X="1" RelativeTo="ParentSize" />
+      </EnteringAnimation>
+      <ExitingAnimation>
+        <Move X="-1" RelativeTo="ParentSize" />
+      </ExitingAnimation>
+    </Page>
+  </DockPanel>
+</Panel>

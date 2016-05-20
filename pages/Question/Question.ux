@@ -1,13 +1,6 @@
   <DockPanel ux:Class="Question" Color="TicketPurple">
-    <Panel Dock="Top" Margin="0,-1,0,0" Color="TicketPurple">
-      <StatusBarBackground/>
-    </Panel>
     <Text ux:Class="T" TextColor="LightGray" Alignment="CenterLeft" />
-
-    <iOS.StatusBarConfig Style="Light" />
-
     <DockPanel>
-      <TopBar/>
       <ChatBox Dock="Bottom" />
 
       <Panel Color="White">
@@ -16,7 +9,7 @@
             <Panel Height="430" />
             <StackPanel>
               <StackPanel Color="White" >
-                <Each Count="5">
+                <Each Count="10">
                   <Message />
                 </Each>
               </StackPanel>
