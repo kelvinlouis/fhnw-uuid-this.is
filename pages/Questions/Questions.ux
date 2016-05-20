@@ -6,7 +6,7 @@
   <DockPanel>
     <TopBar Dock="Top" />
 
-    <DirectNavigation ux:Name="nav" Active="{activePage}" />
+    <DirectNavigation ux:Name="nav" Active="{activePageHandle}" />
 
     <Page ux:Name="feed" Background="#FFF">
       <QuestionFeed />

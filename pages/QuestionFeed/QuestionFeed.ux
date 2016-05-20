@@ -1,4 +1,5 @@
 <DockPanel ux:Class="QuestionFeed">
+  <string ux:Key="Title" ux:Value="Feed"/>
   <WrapPanel Dock="Top" Background="#79f">
     <Rectangle>
       <WrapPanel>

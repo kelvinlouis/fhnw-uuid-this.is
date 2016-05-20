@@ -1,4 +1,5 @@
   <DockPanel ux:Class="Question" Color="TicketPurple">
+    <string ux:Key="Title" ux:Value="Question"/>
     <Text ux:Class="T" TextColor="LightGray" Alignment="CenterLeft" />
     <DockPanel>
       <ChatBox Dock="Bottom" />

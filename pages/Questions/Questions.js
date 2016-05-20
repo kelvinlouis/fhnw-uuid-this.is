@@ -1,7 +1,26 @@
 var Observable = require('FuseJS/Observable'),
-    activeQuestion = Observable({}),
-    activePage = Observable('feed'),
-    //Question = require('../../components/Question'),
+    pages = Observable(
+      {
+        title: 'Feed',
+        handle: 'feed'
+      },
+      {
+        title: 'Question',
+        handle: 'question'
+      },
+      {
+        title: 'My Questions',
+        handle: 'myQuestions'
+      },
+      {
+        title: 'My Answers',
+        handle: 'myAnswers'
+      },
+      {
+        title: 'Create Question',
+        handle: 'createQuestion'
+      }
+    ),
     questions = Observable(
       new Question('question1', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
       new Question('question2', 'image2', 'Help me', '', 'Kelvin Louis', '11:00', 3),
@@ -17,9 +36,10 @@ var Observable = require('FuseJS/Observable'),
       new Question('question12', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
       new Question('question13', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
       new Question('question14', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3)
-    );
+    ),
+    activePage = Observable(pages.getAt(0));
 
-    function Question(handle, image, title, description, author, timestamp, answers) {
+  function Question(handle, image, title, description, author, timestamp, answers) {
       this.handle = handle;
       this.image = image;
       this.title = title;
@@ -31,20 +51,20 @@ var Observable = require('FuseJS/Observable'),
 
 module.exports = {
   questions: questions,
-  activeQuestion: activeQuestion,
   activePage: activePage,
+  activePageHandle: activePage.map(function(x) {
+    return x.handle;
+  }),
+
+  activePageTitle: activePage.map(function(x) {
+    return x.title;
+  }),
 
   goBack: function() {
-    activePage.value = 'feed';
-    activeQuestion.value = {};
+    activePage.value = pages.toArray()[0];
   },
 
   goToQuestion: function() {
-    activePage.value = 'question';
-  },
-
-  selectedQuestion: function(args) {
-    activeQuestion.value = args.data;
-    activePage.value = args.data.handle;
+    activePage.value = pages.toArray()[1];
   }
 };
