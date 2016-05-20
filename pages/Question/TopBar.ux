@@ -1,0 +1,15 @@
+<Grid ux:Class="TopBar" Dock="Top" Color="TicketPurple" Padding="10,10,10,0" Rows="1*,1*">
+  <Grid Columns="80,1*,30" Alignment="Top" Height="60">
+    <IconChevronLeft FontSize="30" TextColor="#FFF" Alignment="VerticalCenter">
+      <Clicked>
+        <GoBack  />
+      </Clicked>
+    </IconChevronLeft>
+    <Text Value="Question" FontSize="20" TextColor="LightGray" Alignment="VerticalCenter"/>
+    <Grid Rows="7,7,7" Alignment="VerticalCenter">
+      <Circle Color="LightGray" Width="4" Height="4"/>
+      <Circle Color="LightGray" Width="4" Height="4"/>
+      <Circle Color="LightGray" Width="4" Height="4"/>
+    </Grid>
+  </Grid>
+</Grid>

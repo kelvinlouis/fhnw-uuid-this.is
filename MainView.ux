@@ -1,20 +1,28 @@
 <App Theme="Basic" Background="#eee">
-	<JavaScript File="MainView.js" />
-	<PageControl Active="{activePage}">
-		<!-- <Page ux:Name="Intro">
-			<Intro />
-		</Page> -->
-		<Page ux:Name="Login">
-			<Login />
-		</Page>
-		<Page ux:Name="LoginSetInterests">
-			<LoginSetInterests />
-		</Page>
-		<Page ux:Name="QuestionFeed">
-			<QuestionFeed />
-		</Page>
-		<Page ux:Name="CreateQuestion">
-			<CreateQuestion />
-		</Page>
-	</PageControl>
+  <JavaScript File="MainView.js" />
+  
+  <Font File="Assets/Fonts/fontawesome-webfont.ttf" ux:Global="fa" />
+  <Font File="Assets/Fonts/RobotoCondensed-Bold.ttf" ux:Global="Bold" />
+  <Font File="Assets/Fonts/RobotoCondensed-Regular.ttf" ux:Global="Regular" />
+  <Font File="Assets/Fonts/RobotoCondensed-Light.ttf" ux:Global="Light" />
+  <ColorPalette />
+  <Icons />
+
+  <PageControl Active="{activePage}">
+    <Page ux:Name="Intro" Background="#FFF">
+      <Intro />
+    </Page>
+    <Page ux:Name="Login" Background="#FFF">
+      <Login />
+    </Page>
+    <Page ux:Name="LoginSetInterests" Background="#FFF">
+      <LoginSetInterests />
+    </Page>
+    <Page ux:Name="QuestionFeed" Background="#FFF">
+      <QuestionFeed />
+    </Page>
+    <Page ux:Name="CreateQuestion" Background="#FFF">
+      <CreateQuestion />
+    </Page>
+  </PageControl>
 </App>

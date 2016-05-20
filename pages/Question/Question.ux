@@ -1,2 +1,62 @@
-<Panel ux:Class="Question">
-</Panel>
+  <DockPanel ux:Class="Question" Color="TicketPurple">
+    <Panel Dock="Top" Margin="0,-1,0,0" Color="TicketPurple">
+      <StatusBarBackground/>
+    </Panel>
+    <Text ux:Class="T" TextColor="LightGray" Alignment="CenterLeft" />
+
+    <iOS.StatusBarConfig Style="Light" />
+
+    <DockPanel>
+      <TopBar/>
+      <ChatBox Dock="Bottom" />
+
+      <Panel Color="White">
+        <ScrollView>
+          <StackPanel>
+            <Panel Height="430" />
+            <StackPanel>
+              <StackPanel Color="White" >
+                <Each Count="5">
+                  <Message />
+                </Each>
+              </StackPanel>
+
+              <ScrollingAnimation From="0" To="150">
+                <Move Target="imageContainer" Y="-1" RelativeTo="Size"/>
+              </ScrollingAnimation>
+
+              <ScrollingAnimation From="0" To="150">
+                <Move Target="image" Y="0.5" RelativeTo="Size" />
+                <Change Target="image.Opacity" Value="0" Easing="QuadraticInOut"/>
+              </ScrollingAnimation>
+
+              <ScrollingAnimation From="150" To="400">
+                <Move Target="description" Y="-1" RelativeTo="Size"/>
+              </ScrollingAnimation>
+
+              <ScrollingAnimation From="360" To="440">
+                <Move Target="title" Y="-80"/>
+              </ScrollingAnimation>
+
+            </StackPanel>
+          </StackPanel>
+        </ScrollView>
+
+        <Grid ux:Name="info" Rows="80,150,200" Alignment="Top">
+          <Panel ux:Name="title" Color="TicketPurple" Padding="10,0,10,0">
+            <T TextWrapping="Wrap" Value="Where can I eat the best #Ramen in #Japan?" FontSize="22"/>
+          </Panel>
+          <Panel ux:Name="description" Color="TicketPurple" Padding="10,5,10,5">
+            <T TextWrapping="Wrap">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, libero sit amet cursus feugiat, tortor ante imperdiet enim, egestas sagittis urna libero in libero,gestas sagittis urna libero in libero gestas sagittis urna libero in libero.
+            </T>
+          </Panel>
+          <Panel ux:Name="imageContainer" >
+            <Panel ux:Name="image" Color="LightGray">
+              <Image File="../../Assets/Questions/japan-large.jpg" StretchMode="Fill" />
+            </Panel>
+          </Panel>
+        </Grid>
+      </Panel>
+    </DockPanel>
+  </DockPanel>

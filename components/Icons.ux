@@ -1,0 +1,6 @@
+<Panel ux:Class="Icons">
+  <Text ux:Class="IconArrowLeft" Font="fa">&#xf060;</Text>
+  <Text ux:Class="IconChevronLeft" Font="fa">&#xf053;</Text>
+  <Text ux:Class="IconSend" Font="fa">&#xf1d8;</Text>
+  <Text ux:Class="IconSmile" Font="fa">&#xf118;</Text>
+</Panel>

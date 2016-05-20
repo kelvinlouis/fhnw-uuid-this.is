@@ -1,2 +1,19 @@
 <Panel ux:Class="QuestionItem">
+  <string ux:Property="Image" />
+  <string ux:Property="Title" />
+  <string ux:Property="Author" />
+  <string ux:Property="Timestamp" />
+  <string ux:Property="Answers" />
+
+  <DockPanel Margin="7,1,7,0">
+    <Circle Height="50" Width="50" Dock="Left" Margin="7,7,0,7" Alignment="TopLeft">
+      <ImageFill Source="{DataToResource icon}" />
+    </Circle>
+
+    <StackPanel Margin="7,3,7,7">
+      <Text Value="{Property this.Title}" FontSize="16" />
+      <Text Value="{Property this.Author}" FontSize="16" TextColor="#999" />
+      <Text TextWrapping="Wrap" Value="{Property this.Answers}" FontSize="14" TextColor="#000" />
+    </StackPanel>
+  </DockPanel>
 </Panel>

@@ -1,36 +1,34 @@
-<StackPanel ux:Class="Login">
-  <Text>this.is</Text>
+<Panel ux:Class="Login">
+  <HierarchicalNavigation Active="choose" />
 
-  <Button Text="Login with Twitter">
+  <Page ux:Name="choose">
+    <StackPanel>
+      <Text>this.is</Text>
+
+      <Button Text="Login with Twitter">
+        <Clicked>
+          <NavigateTo Target="twitter" />
+        </Clicked>  
+      </Button>
+
+      <Button Text="Login with Facebook">
+        <Clicked>
+          <NavigateTo Target="facebook" />
+        </Clicked>  
+      </Button>
+      <Text>by logging in you accept the TOC</Text>
+    </StackPanel>
+  </Page>
+
+  <Page ux:Name="facebook" Background="Red" ux:AutoBind="false">
     <Clicked>
-      <Set facebookSuccess.Visibility="Hidden" />
-      <Set twitterSuccess.Visibility="Visible" />
-    </Clicked>  
-  </Button>
+      <Callback Handler="{completeLogin}" />
+    </Clicked>
+  </Page>
 
-  <Button Text="Login with Facebook">
+  <Page ux:Name="twitter" Background="Blue" ux:AutoBind="false">
     <Clicked>
-      <Set facebookSuccess.Visibility="Visible" />
-      <Set twitterSuccess.Visibility="Hidden" />
-    </Clicked>  
-  </Button>
-  <Text>by logging in you accept the TOC</Text>
-
-  <Panel ux:Name="facebookSuccess" Visibility="Hidden">
-    <Rectangle Color="Red" Height="100" Width="100">
-      <Clicked>
-        <Callback Handler="{completeLogin}" />
-      </Clicked>
-    </Rectangle>
-  </Panel>
-
-  <Panel ux:Name="twitterSuccess" Visibility="Hidden">
-    <Rectangle Color="Blue" Height="100" Width="100">
-      <Clicked>
-        <Callback Handler="{completeLogin}" />
-      </Clicked>
-    </Rectangle>
-  </Panel>
-  <JavaScript>
-  </JavaScript>
-</StackPanel>
+      <Callback Handler="{completeLogin}" />
+    </Clicked>
+  </Page>
+</Panel>

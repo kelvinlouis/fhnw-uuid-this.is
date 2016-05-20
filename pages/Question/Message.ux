@@ -1,0 +1,27 @@
+<Panel ux:Class="Message">
+  <Text ux:Class="DateTime" Alignment="VerticalCenter" FontSize="12" TextColor="#7a96b2" />
+  <Text ux:Class="Name" Alignment="VerticalCenter" FontSize="16">
+    <Font File="../../Assets/Fonts/Roboto-Bold.ttf" />
+  </Text>
+  <Text ux:Class="MessageText" TextWrapping="Wrap" FontSize="14">
+    <Font File="../../Assets/Fonts/Lato-Regular.ttf" />
+  </Text>
+
+  <DockPanel Margin="10,10,0,5">
+    <Circle Dock="Left" Alignment="TopCenter" Width="45" Height="45">
+      <ImageFill File="../../Assets/Authors/male1.jpg" />
+    </Circle>
+
+    <DockPanel Margin="10,4,10,0">
+      <StackPanel Dock="Top" Orientation="Horizontal">
+        <Name Value="Kelvin Louis" Margin="0,0,10,0" />
+        <DateTime Value="14:00" />
+      </StackPanel>
+      <StackPanel Dock="Bottom">
+        <MessageText>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec leo rhoncus, efficitur ligula id, consectetur sem. Nulla iaculis consequat auctor.
+        </MessageText>
+      </StackPanel>
+    </DockPanel>
+  </DockPanel>
+</Panel>

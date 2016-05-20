@@ -1,17 +1,69 @@
-<StackPanel ux:Class="QuestionFeed">
-  <WrapPanel>
-    <Rectangle>
-      <WrapPanel>
-        <Tag Text="Food" />
-        <Tag Text="Japan" />
-        <Tag Text="Travel" />
+<Panel ux:Class="QuestionFeed">
+  <JavaScript File="QuestionFeed.js" />
+  <FileImageSource ux:Key="image1" File="../../Assets/Questions/ramen.jpg" />
+  <FileImageSource ux:Key="image2" File="../../Assets/Questions/japan.jpg" />
+
+  <HierarchicalNavigation ux:Name="nav" Active="feed" />
+  
+  <Page ux:Name="feed" Background="#FFF">
+    <DockPanel>
+      <WrapPanel Dock="Top" Background="#79f">
+        <Rectangle>
+          <WrapPanel>
+            <Tag Text="Food" />
+            <Tag Text="Japan" />
+            <Tag Text="Travel" />
+          </WrapPanel>
+        </Rectangle>
+        <Button Text="Ask">
+          <Clicked>
+            <Callback Handler="{createQuestion}" />
+          </Clicked>
+        </Button>
       </WrapPanel>
-    </Rectangle>
-    <Button Text="Ask">
-      <Clicked>
-        <Callback Handler="{createQuestion}" />
-      </Clicked>
-    </Button>
-  </WrapPanel>
-  <QuestionItem></QuestionItem>
-</StackPanel>
+
+      <ScrollView>
+        <StackPanel>
+          <Each Items="{questions}">
+            <Panel>
+              <DockPanel Margin="7,1,7,0">
+                <Circle Height="50" Width="50" Dock="Left" Margin="7,7,0,7" Alignment="TopLeft">
+                  <ImageFill Source="{DataToResource image}" />
+                </Circle>
+
+                <StackPanel Margin="7,3,7,7">
+                  <Text Font="Regular" Value="{title}" FontSize="16" />
+                  <Text Font="Regular" Value="{author}" FontSize="16" TextColor="#999" />
+                  <Text Font="Light" TextWrapping="Wrap" Value="{answers}" FontSize="14" TextColor="#000" />
+                </StackPanel>
+              </DockPanel>
+              <Clicked>
+                <NavigateTo Target="question" />
+              </Clicked>
+            </Panel>
+          </Each>
+          <WhileEmpty Items="{questions}">
+            <Text>There are no questions to show. Please adjust your tags</Text>
+          </WhileEmpty>
+        </StackPanel>
+      </ScrollView>
+    </DockPanel>
+
+    <EnteringAnimation>
+      <Move X="1" RelativeTo="ParentSize" />
+    </EnteringAnimation>
+    <ExitingAnimation>
+      <Move X="-1" RelativeTo="ParentSize" />
+    </ExitingAnimation>
+  </Page>
+  
+  <Page ux:Name="question" Background="#FFF" ux:AutoBind="false">
+    <Question />
+    <EnteringAnimation>
+      <Move X="1" RelativeTo="ParentSize" />
+    </EnteringAnimation>
+    <ExitingAnimation>
+      <Move X="-1" RelativeTo="ParentSize" />
+    </ExitingAnimation>
+  </Page>
+</Panel>
