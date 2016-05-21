@@ -4,4 +4,11 @@
   <Text ux:Class="IconSend" Font="fa">&#xf1d8;</Text>
   <Text ux:Class="IconSmile" Font="fa">&#xf118;</Text>
   <Text ux:Class="IconPlusCircle" Font="fa">&#xf055;</Text>
+  <Text ux:Class="IconList" Font="fa">&#xf03a;</Text>
+  <Text ux:Class="IconQuestion" Font="fa">&#xf059;</Text>
+  <Text ux:Class="IconComment" Font="fa">&#xf075;</Text>
+  <Text ux:Class="IconTrash" Font="fa">&#xf014;</Text>
+  <Text ux:Class="IconTimes" Font="fa">&#xf00d;</Text>
+  <Text ux:Class="IconTimesCircle" Font="fa">&#xf057;</Text>
+  <Text ux:Class="IconCheckCircle" Font="fa">&#xf058;</Text>
 </Panel>

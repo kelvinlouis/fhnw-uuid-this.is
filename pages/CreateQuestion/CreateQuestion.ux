@@ -1,3 +1,57 @@
-<Panel ux:Class="CreateQuestion">
-  <Text Alignment="Center">todo: Create Question</Text>
-</Panel>
+<DockPanel ux:Class="CreateQuestion" Margin="10,10,10,10">
+  <JavaScript File="CreateQuestion.js" />
+  <Text ux:Class="TextCounter" TextColor="#666" FontSize="12" Alignment="Right" Margin="0,0,0,-5" />
+  <StackPanel ux:Class="Section" Margin="0,10,0,10" />
+  
+  <ScrollView>
+    <StackPanel>
+      <Section>
+        <TextCounter Value="{titleCounter}" />
+        <TextInput Value="{title}" IsMultiline="true" PlaceholderText="Title" PlaceholderColor="#CCC" />
+      </Section>
+
+      <Section ux:Name="imagePlaceholder" Visibility="Visible">
+        <Rectangle Width="100%" Height="200" Fill="#3D206A">
+          <Halftone Spacing="1" />
+          <WrapPanel Alignment="Center">
+            <IconPlusCircle Margin="0,0,5,0" TextColor="#FFF" /> 
+            <Text TextColor="#FFF">Add Picture</Text>
+          </WrapPanel>
+
+          <Clicked>
+            <Set imagePlaceholder.Visibility="Collapsed" />
+            <Set uploadedImage.Visibility="Visible" />
+          </Clicked>
+        </Rectangle>
+      </Section>
+
+      <Section ux:Name="uploadedImage" Visibility="Collapsed">
+        <Circle Width="30" Height="30" Fill="#3D206A" Alignment="Right" Margin="0,0,0,-15">
+          <IconTimes FontSize="20" Alignment="Center" TextColor="#FFF" />
+          <Clicked>
+            <Set imagePlaceholder.Visibility="Visible" />
+            <Set uploadedImage.Visibility="Collapsed" />
+          </Clicked>
+        </Circle>
+        <!-- <WrapPanel Alignment="Right">
+          <Text TextColor="#666" FontSize="14" Value="Remove Photo" Margin="0,0,5,0" />
+          <IconTimesCircle TextColor="#3D206A" />
+        </WrapPanel> -->
+        <Image File="../../Assets/Questions/mochi.jpg" Height="200" StretchMode="Fill">
+          <Clicked>
+            <Set imagePlaceholder.Visibility="Visible" />
+            <Set uploadedImage.Visibility="Collapsed" />
+          </Clicked>
+        </Image>
+
+      </Section>
+
+      <Section>
+        <TextCounter Value="{descCounter}" />
+        <TextInput Value="{desc}" IsMultiline="true" PlaceholderText="Description" PlaceholderColor="#CCC" />
+      </Section>
+
+    </StackPanel>
+  </ScrollView>
+  <PurpleButton Dock="Bottom" Text="Ask Question" Alignment="Bottom" Clicked="{createQuestion}" />
+</DockPanel>

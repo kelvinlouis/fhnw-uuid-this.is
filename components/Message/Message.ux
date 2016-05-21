@@ -9,18 +9,16 @@
 
   <DockPanel Margin="10,10,0,5">
     <Circle Dock="Left" Alignment="TopCenter" Width="45" Height="45">
-      <ImageFill File="../../Assets/Authors/male1.jpg" />
+      <ImageFill Source="{DataToResource image}" />
     </Circle>
 
     <DockPanel Margin="10,4,10,0">
       <StackPanel Dock="Top" Orientation="Horizontal">
-        <Name Value="Kelvin Louis" Margin="0,0,10,0" />
-        <DateTime Value="14:00" />
+        <Name Value="{author}" Margin="0,0,10,0" />
+        <DateTime Value="{time}" />
       </StackPanel>
       <StackPanel Dock="Bottom">
-        <MessageText>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec leo rhoncus, efficitur ligula id, consectetur sem. Nulla iaculis consequat auctor.
-        </MessageText>
+        <MessageText Value="{message}" />
       </StackPanel>
     </DockPanel>
   </DockPanel>

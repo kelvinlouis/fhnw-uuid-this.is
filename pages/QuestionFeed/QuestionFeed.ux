@@ -1,5 +1,4 @@
 <DockPanel ux:Class="QuestionFeed">
-  <string ux:Key="Title" ux:Value="Feed"/>
   <WrapPanel Dock="Top" Background="#79f">
     <Rectangle>
       <WrapPanel>
@@ -13,26 +12,11 @@
   <ScrollView>
     <StackPanel>
       <Each Items="{questions}">
-        <Panel>
-          <DockPanel Margin="7,1,7,0">
-            <Circle Height="50" Width="50" Dock="Left" Margin="7,7,0,7" Alignment="TopLeft">
-              <ImageFill Source="{DataToResource image}" />
-            </Circle>
-
-            <StackPanel Margin="7,3,7,7">
-              <Text Font="Regular" Value="{title}" FontSize="16" />
-              <Text Font="Regular" Value="{author}" FontSize="16" TextColor="#999" />
-              <Text Font="Light" TextWrapping="Wrap" Value="{answers}" FontSize="14" TextColor="#000" />
-            </StackPanel>
-          </DockPanel>
-          <Clicked>
-            <Callback Handler="{goToQuestion}" />
-          </Clicked>
-        </Panel>
+        <QuestionItem />
       </Each>
-      <WhileEmpty Items="{questions}">
-        <Text>There are no questions to show. Please adjust your tags</Text>
-      </WhileEmpty>
     </StackPanel>
   </ScrollView>
+  <WhileEmpty Items="{questions}">
+    <Text TextWrapping="Wrap" Alignment="Center">There are no questions to show. Please adjust your tags, by adding new ones or removing them</Text>
+  </WhileEmpty>
 </DockPanel>

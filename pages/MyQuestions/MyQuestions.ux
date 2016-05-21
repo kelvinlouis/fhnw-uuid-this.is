@@ -1,0 +1,12 @@
+<Panel ux:Class="MyQuestions">
+  <ScrollView>
+    <StackPanel>
+      <Each Items="{myQuestions}">
+        <QuestionItem />
+      </Each>
+    </StackPanel>
+  </ScrollView>
+  <WhileEmpty Items="{myQuestions}">
+    <Text TextWrapping="Wrap" Alignment="Center">You haven't asked any questions yet</Text>
+  </WhileEmpty>
+</Panel>

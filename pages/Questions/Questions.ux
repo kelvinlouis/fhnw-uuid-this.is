@@ -1,28 +1,30 @@
 <Panel ux:Class="Questions">
   <JavaScript File="Questions.js" />
   <FileImageSource ux:Key="image1" File="../../Assets/Questions/ramen.jpg" />
-  <FileImageSource ux:Key="image2" File="../../Assets/Questions/japan.jpg" />
+  <FileImageSource ux:Key="image2" File="../../Assets/Questions/ramen2.jpg" />
+  <FileImageSource ux:Key="image3" File="../../Assets/Questions/japan.jpg" />
+  <FileImageSource ux:Key="image4" File="../../Assets/Questions/mochi.jpg" />
+
+  <FileImageSource ux:Key="author1" File="../../Assets/Authors/author1.jpg" />
+  <FileImageSource ux:Key="author2" File="../../Assets/Authors/author2.jpg" />
+  <FileImageSource ux:Key="author3" File="../../Assets/Authors/author3.jpg" />
+  <FileImageSource ux:Key="author4" File="../../Assets/Authors/sam.jpg" />
   
   <DockPanel>
     <StackPanel Dock="Top" Color="TicketPurple" Padding="10,10,10,0">
       <Grid Rows="1*,1*">
         <Grid Columns="40,1*,30,30" Alignment="Top" Height="60">
-          <IconChevronLeft ux:Name="backButton" FontSize="20" Opacity="0" TextColor="#FFF" Alignment="VerticalCenter">
-            <Clicked>
-              <Callback Handler="{goBack}" />
-            </Clicked>
-          </IconChevronLeft>
+          <IconChevronLeft ux:Name="backButton" FontSize="20" Opacity="0" TextColor="#FFF" Alignment="VerticalCenter" Clicked="{goBack}" />
           <Text Value="{activePageTitle}" FontSize="20" TextColor="LightGray" Alignment="VerticalCenter"/>
-          <IconPlusCircle ux:Name="addButton" FontSize="20" Opacity="1" TextColor="#FFF" Alignment="VerticalCenter">
-            <Clicked>
-              <Callback Handler="{goToCreateQuestion}" />
-            </Clicked>
-          </IconPlusCircle>
-          <Grid ux:Name="settings" Rows="7,7,7" Alignment="VerticalCenter" Opacity="1">
-            <Circle Color="LightGray" Width="4" Height="4"/>
-            <Circle Color="LightGray" Width="4" Height="4"/>
-            <Circle Color="LightGray" Width="4" Height="4"/>
-          </Grid>
+          <IconPlusCircle ux:Name="addButton" FontSize="20" Opacity="1" TextColor="#FFF" Alignment="VerticalCenter" Clicked="{goToCreateQuestion}" />
+          <Panel>
+            <Grid ux:Name="settingsButton" Rows="7,7,7" Alignment="VerticalCenter" Opacity="1" Clicked="{goToSettings}">
+              <Circle Color="LightGray" Width="4" Height="4"/>
+              <Circle Color="LightGray" Width="4" Height="4"/>
+              <Circle Color="LightGray" Width="4" Height="4"/>
+            </Grid>
+            <IconCheckCircle ux:Name="closeButton" FontSize="20" Opacity="0" TextColor="#FFF" Alignment="VerticalCenter" Clicked="{closeQuestion}" />
+          </Panel>
         </Grid>
       </Grid>
       <MultiLayoutPanel Height="50" ux:Name="tabBar" Visibility="Visible">
@@ -83,8 +85,12 @@
       <WhileActive>
         <Change backButton.Opacity="1" Duration="0.3"/>
         <Change addButton.Opacity="0" Duration="0.3"/>
-        <Change settings.Opacity="0" Duration="0.3"/>
+        <Change settingsButton.Opacity="0" Duration="0.3"/>
         <Change tabBar.Visibility="Collapsed" />
+
+        <WhileTrue Value="{isMyQuestion}">
+          <Change closeButton.Opacity="1" Duration="0.3"/>
+        </WhileTrue>
       </WhileActive>
       <EnteringAnimation>
         <Move X="1" RelativeTo="ParentSize" />
@@ -96,7 +102,7 @@
     </Page>
 
     <Page ux:Name="myQuestions" Background="#FFF">
-      <Text Alignment="Center">todo: My Questions</Text>
+      <MyQuestions />
 
       <WhileActive>
         <Set tabBar.LayoutElement="myQuestionsTab" />
@@ -112,7 +118,7 @@
     </Page>
 
     <Page ux:Name="myAnswers" Background="#FFF">
-      <Text Alignment="Center">todo: My Answers</Text>
+      <MyAnswers />
 
       <WhileActive>
         <Set tabBar.LayoutElement="myAnswersTab" />
@@ -133,7 +139,24 @@
       <WhileActive>
         <Change backButton.Opacity="1" Duration="0.3"/>
         <Change addButton.Opacity="0" Duration="0.3"/>
-        <Change settings.Opacity="0" Duration="0.3"/>
+        <Change settingsButton.Opacity="0" Duration="0.3"/>
+        <Change tabBar.Visibility="Collapsed" />
+      </WhileActive>
+      <EnteringAnimation>
+        <Move X="1" RelativeTo="ParentSize" />
+      </EnteringAnimation>
+      <ExitingAnimation>
+        <Move X="-1" RelativeTo="ParentSize" />
+      </ExitingAnimation>
+    </Page>
+
+    <Page ux:Name="settings" Background="#FFF">
+      <Text Alignment="Center">todo: Settings</Text>
+      
+      <WhileActive>
+        <Change backButton.Opacity="1" Duration="0.3"/>
+        <Change addButton.Opacity="0" Duration="0.3"/>
+        <Change settingsButton.Opacity="0" Duration="0.3"/>
         <Change tabBar.Visibility="Collapsed" />
       </WhileActive>
       <EnteringAnimation>

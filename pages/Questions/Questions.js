@@ -1,86 +1,99 @@
 var Observable = require('FuseJS/Observable'),
-    pages = Observable(
-      {
-        title: 'Feed',
-        handle: 'feed'
-      },
-      {
-        title: 'Question',
-        handle: 'question'
-      },
-      {
-        title: 'My Questions',
-        handle: 'myQuestions'
-      },
-      {
-        title: 'My Answers',
-        handle: 'myAnswers'
-      },
-      {
-        title: 'Create Question',
-        handle: 'createQuestion'
-      }
-    ),
-    questions = Observable(
-      new Question('question1', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
-      new Question('question2', 'image2', 'Help me', '', 'Kelvin Louis', '11:00', 3),
-      new Question('question3', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
-      new Question('question4', 'image2', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
-      new Question('question5', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
-      new Question('question6', 'image2', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
-      new Question('question7', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
-      new Question('question8', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
-      new Question('question9', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
-      new Question('question10', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
-      new Question('question11', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
-      new Question('question12', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
-      new Question('question13', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
-      new Question('question14', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3)
-    ),
-    activePage = Observable(pages.getAt(0)),
-    previousPage = null;
+    bundle = require('FuseJS/Bundle'),
 
-  function Question(handle, image, title, description, author, timestamp, answers) {
-      this.handle = handle;
-      this.image = image;
-      this.title = title;
-      this.description = description;
-      this.author = author;
-      this.timestamp = timestamp;
-      this.answers = answers;
-    }
+    jsonData = JSON.parse(bundle.readSync('data.json')),
+    pages = Observable.apply(null, jsonData.pages),
+    questions = Observable.apply(null, jsonData.questions),
+
+    myQuestions = Observable(),
+    myAnswers = Observable(),
+    activePage = Observable(pages.getAt(0)),
+    activeQuestion = Observable(),
+    isMyQuestion = Observable(false),
+    previousPage = null;
 
 module.exports = {
   questions: questions,
   activePage: activePage,
+  myQuestions: myQuestions,
+  myAnswers: myAnswers,
+  activeQuestion: activeQuestion,
+  isMyQuestion: isMyQuestion,
+
   activePageHandle: activePage.map(function(x) {
     return x.handle;
   }),
+
   activePageTitle: activePage.map(function(x) {
     return x.title;
   }),
+
+  selectQuestion: function(e) {
+    activeQuestion.value = e.data;
+    previousPage = activePage.value;
+    activePage.value = pages.getAt(1);
+
+    isMyQuestion.value = e.data.myQuestion || false;
+  },
+
   goBack: function() {
     activePage.value = previousPage;
     previousPage = null;
   },
-  goToQuestion: function() {
-    previousPage = activePage.value;
-    activePage.value = pages.toArray()[1];
-  },
+
   goToFeed: function() {
     previousPage = activePage.value;
-    activePage.value = pages.toArray()[0];
+    activePage.value = pages.getAt(0);
+    isMyQuestion.value = false;
   },
+
   goToMyQuestions: function() {
     previousPage = activePage.value;
-    activePage.value = pages.toArray()[2];
+    activePage.value = pages.getAt(2);
+    isMyQuestion.value = false;
   },
+
   goToMyAnswers: function() {
     previousPage = activePage.value;
-    activePage.value = pages.toArray()[3];
+    activePage.value = pages.getAt(3);
+    isMyQuestion.value = false;
   },
+
   goToCreateQuestion: function() {
     previousPage = activePage.value;
-    activePage.value = pages.toArray()[4];
+    activePage.value = pages.getAt(4);
+    isMyQuestion.value = false;
+  },
+
+  goToSettings: function() {
+    previousPage = activePage.value;
+    activePage.value = pages.getAt(5);
+    isMyQuestion.value = false;
+  },
+
+  createQuestion: function(e) {
+    var title = e.data.title.value,
+        desc = e.data.desc.value,
+        q = new Question(title, desc, 'image4', 'Sam', 'Now'),
+        qArray = questions.toArray();
+
+    qArray.unshift(q);
+    questions.replaceAll(qArray);
+    myQuestions.add(q);
+
+    activePage.value = pages.getAt(0);
+    isMyQuestion.value = false;
   }
 };
+
+function Question(title, description, image, author, time) {
+    this.title = title;
+    this.description = description;
+    this.image = image;
+    this.author = author;
+    this.time = time;
+    this.tags = ['Japan', 'Tokyo', 'Food'];
+    this.answers = [];
+    this.answerCount = 0;
+    this.myQuestion = true;
+  }

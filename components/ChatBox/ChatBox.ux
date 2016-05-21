@@ -3,7 +3,7 @@
     <DropShadow Angle="0" Distance="0" Size="5" />
     <DockPanel>
       <IconSmile Dock="Left" FontSize="24" TextColor="Gray" Alignment="VerticalCenter" Margin="10,0,10,0" />
-      <TextInput Alignment="VerticalCenter" />
+      <TextInput Alignment="VerticalCenter" PlaceholderText="Enter Answer" PlaceholderColor="#CCC" />
       <Circle Dock="Right" Width="30" Height="30" Fill="#3D206A" Margin="10,0,10,0">
         <IconSend FontSize="14" TextColor="#FFF" Alignment="Center" />
       </Circle>
