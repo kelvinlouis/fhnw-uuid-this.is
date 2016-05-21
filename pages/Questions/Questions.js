@@ -74,12 +74,9 @@ module.exports = {
   createQuestion: function(e) {
     var title = e.data.title.value,
         desc = e.data.desc.value,
-        q = new Question(title, desc, 'image4', 'Sam', 'Now'),
-        qArray = questions.toArray();
+        q = new Question(title, desc, 'image4', 'Sam', 'Now');
 
-    qArray.unshift(q);
-    questions.replaceAll(qArray);
-    myQuestions.add(q);
+    questions.insertAt(0, q);
 
     activePage.value = pages.getAt(0);
     isMyQuestion.value = false;

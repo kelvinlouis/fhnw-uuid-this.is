@@ -10,6 +10,51 @@
   <FileImageSource ux:Key="author3" File="../../Assets/Authors/author3.jpg" />
   <FileImageSource ux:Key="author4" File="../../Assets/Authors/sam.jpg" />
   
+  <!-- <Panel ux:Name="closeQuestionOverlay" Opacity="1">
+    <DockPanel Height="70%" Background="White" Opacity="1" Margin="10,0,10,0" Padding="30">
+      <Text TextWrapping="Wrap" Alignment="Center" Dock="Top" Margin="0,0,0,30">
+        You're closing your question. Who was helpful finding an answer?
+      </Text>
+      <ScrollView>
+        <StackPanel ItemSpacing="20">
+          <DockPanel Height="45">
+            <Circle Dock="Left" Alignment="TopCenter" Width="45" Height="45">
+              <ImageFill File="../../Assets/Authors/author1.jpg" />
+            </Circle>
+            <Text Value="Mike" Alignment="VerticalCenter" Margin="20,0,0,0" />
+            <Switch Value="False" Dock="Right" />
+          </DockPanel>
+          <DockPanel Height="45">
+            <Circle Dock="Left" Alignment="TopCenter" Width="45" Height="45">
+              <ImageFill File="../../Assets/Authors/author2.jpg" />
+            </Circle>
+            <Text Value="Isa" Alignment="VerticalCenter" Margin="20,0,0,0" />
+            <Switch Value="False" Dock="Right" />
+          </DockPanel>
+          <DockPanel Height="45">
+            <Circle Dock="Left" Alignment="TopCenter" Width="45" Height="45">
+              <ImageFill File="../../Assets/Authors/author3.jpg" />
+            </Circle>
+            <Text Value="Kaito" Alignment="VerticalCenter" Margin="20,0,0,0" />
+            <Switch Value="False" Dock="Right" />
+          </DockPanel>
+        </StackPanel>
+      </ScrollView>
+      <PurpleButton Text="Cancel" Dock="Bottom" Margin="0,10,0,0">
+        <Clicked>
+          <Change closeQuestionOverlay.Opacity="0" Duration="0.3" />
+        </Clicked>
+      </PurpleButton>
+      <PurpleButton Text="Close Question" Dock="Bottom">
+        <Clicked>
+          <Change closeQuestionOverlay.Opacity="0" Duration="0.3" />
+        </Clicked>
+      </PurpleButton>
+    </DockPanel>
+    <Rectangle Height="100%" Fill="Black" Opacity="0.8">
+    </Rectangle>
+  </Panel> -->
+  
   <DockPanel>
     <StackPanel Dock="Top" Color="TicketPurple" Padding="10,10,10,0">
       <Grid Rows="1*,1*">
