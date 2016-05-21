@@ -1,6 +1,6 @@
 <Grid ux:Class="TopBar" Dock="Top" Color="TicketPurple" Padding="10,10,10,0" Rows="1*,1*">
   <Grid Columns="40,1*,30" Alignment="Top" Height="60">
-    <IconChevronLeft FontSize="20" TextColor="#FFF" Alignment="VerticalCenter">
+    <IconChevronLeft FontSize="20" Opacity="0" TextColor="#FFF" Alignment="VerticalCenter">
       <Clicked>
         <Callback Handler="{goBack}" />
       </Clicked>

@@ -8,11 +8,6 @@
         <Tag Text="Travel" />
       </WrapPanel>
     </Rectangle>
-    <Button Text="Ask">
-      <Clicked>
-        <Callback Handler="{createQuestion}" />
-      </Clicked>
-    </Button>
   </WrapPanel>
 
   <ScrollView>

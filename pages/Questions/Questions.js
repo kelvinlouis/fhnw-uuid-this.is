@@ -37,7 +37,8 @@ var Observable = require('FuseJS/Observable'),
       new Question('question13', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3),
       new Question('question14', 'image1', 'Where can I eat the best #Ramen in #Japan?', '', 'Kelvin Louis', '11:00', 3)
     ),
-    activePage = Observable(pages.getAt(0));
+    activePage = Observable(pages.getAt(0)),
+    previousPage = null;
 
   function Question(handle, image, title, description, author, timestamp, answers) {
       this.handle = handle;
@@ -55,16 +56,31 @@ module.exports = {
   activePageHandle: activePage.map(function(x) {
     return x.handle;
   }),
-
   activePageTitle: activePage.map(function(x) {
     return x.title;
   }),
-
   goBack: function() {
+    activePage.value = previousPage;
+    previousPage = null;
+  },
+  goToQuestion: function() {
+    previousPage = activePage.value;
+    activePage.value = pages.toArray()[1];
+  },
+  goToFeed: function() {
+    previousPage = activePage.value;
     activePage.value = pages.toArray()[0];
   },
-
-  goToQuestion: function() {
-    activePage.value = pages.toArray()[1];
+  goToMyQuestions: function() {
+    previousPage = activePage.value;
+    activePage.value = pages.toArray()[2];
+  },
+  goToMyAnswers: function() {
+    previousPage = activePage.value;
+    activePage.value = pages.toArray()[3];
+  },
+  goToCreateQuestion: function() {
+    previousPage = activePage.value;
+    activePage.value = pages.toArray()[4];
   }
 };

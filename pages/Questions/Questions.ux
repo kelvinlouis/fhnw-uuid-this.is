@@ -4,13 +4,73 @@
   <FileImageSource ux:Key="image2" File="../../Assets/Questions/japan.jpg" />
   
   <DockPanel>
-    <TopBar Dock="Top" />
+    <StackPanel Dock="Top" Color="TicketPurple" Padding="10,10,10,0">
+      <Grid Rows="1*,1*">
+        <Grid Columns="40,1*,30,30" Alignment="Top" Height="60">
+          <IconChevronLeft ux:Name="backButton" FontSize="20" Opacity="0" TextColor="#FFF" Alignment="VerticalCenter">
+            <Clicked>
+              <Callback Handler="{goBack}" />
+            </Clicked>
+          </IconChevronLeft>
+          <Text Value="{activePageTitle}" FontSize="20" TextColor="LightGray" Alignment="VerticalCenter"/>
+          <IconPlusCircle ux:Name="addButton" FontSize="20" Opacity="1" TextColor="#FFF" Alignment="VerticalCenter">
+            <Clicked>
+              <Callback Handler="{goToCreateQuestion}" />
+            </Clicked>
+          </IconPlusCircle>
+          <Grid ux:Name="settings" Rows="7,7,7" Alignment="VerticalCenter" Opacity="1">
+            <Circle Color="LightGray" Width="4" Height="4"/>
+            <Circle Color="LightGray" Width="4" Height="4"/>
+            <Circle Color="LightGray" Width="4" Height="4"/>
+          </Grid>
+        </Grid>
+      </Grid>
+      <MultiLayoutPanel Height="50" ux:Name="tabBar" Visibility="Visible">
+        <GridLayout ColumnCount="3" Rows="1*"/>
+        <Panel ux:Name="feedTab">
+          <Placeholder>
+            <Rectangle ux:Name="indicator" Alignment="Bottom" Height="4" Fill="#FFF">
+              <LayoutAnimation>
+                <Move RelativeTo="LayoutChange" X="1" Duration="0.4" Easing="BackIn"/>
+              </LayoutAnimation>
+            </Rectangle>
+          </Placeholder>
+          <Tab Text="Feed">
+            <Clicked>
+              <Set nav.Active="feed" />
+            </Clicked>
+          </Tab>
+        </Panel>
+        <Panel ux:Name="myQuestionsTab">
+          <Placeholder  Target="indicator"/>
+          <Tab Text="My Questions">
+            <Clicked>
+              <Set nav.Active="myQuestions" />
+            </Clicked>
+          </Tab>
+        </Panel>
+        <Panel ux:Name="myAnswersTab">
+          <Placeholder Target="indicator"/>
+          <Tab Text="My Answers">
+            <Clicked>
+              <Set nav.Active="myAnswers" />
+            </Clicked>
+          </Tab>
+        </Panel>
+      </MultiLayoutPanel>
+    </StackPanel>
 
     <DirectNavigation ux:Name="nav" Active="{activePageHandle}" />
 
     <Page ux:Name="feed" Background="#FFF">
       <QuestionFeed />
+
+      <WhileActive>
+        <Set tabBar.LayoutElement="feedTab" />
+        <Callback Handler="{goToFeed}" />
+      </WhileActive>
       <EnteringAnimation>
+        <DebugAction Message="feed" />
         <Move X="1" RelativeTo="ParentSize" />
       </EnteringAnimation>
       <ExitingAnimation>
@@ -20,8 +80,47 @@
   
     <Page ux:Name="question" Background="#FFF">
       <Question />
+      <WhileActive>
+        <Change backButton.Opacity="1" Duration="0.3"/>
+        <Change addButton.Opacity="0" Duration="0.3"/>
+        <Change settings.Opacity="0" Duration="0.3"/>
+        <Change tabBar.Visibility="Collapsed" />
+      </WhileActive>
       <EnteringAnimation>
         <Move X="1" RelativeTo="ParentSize" />
+        <DebugAction Message="question" />
+      </EnteringAnimation>
+      <ExitingAnimation>
+        <Move X="-1" RelativeTo="ParentSize" />
+      </ExitingAnimation>
+    </Page>
+
+    <Page ux:Name="myQuestions" Background="#FFF">
+      <Text Alignment="Center">todo: My Questions</Text>
+
+      <WhileActive>
+        <Set tabBar.LayoutElement="myQuestionsTab" />
+        <Callback Handler="{goToMyQuestions}" />
+      </WhileActive>
+      <EnteringAnimation>
+        <Move X="1" RelativeTo="ParentSize" />
+        <DebugAction Message="myQuestions" />
+      </EnteringAnimation>
+      <ExitingAnimation>
+        <Move X="-1" RelativeTo="ParentSize" />
+      </ExitingAnimation>
+    </Page>
+
+    <Page ux:Name="myAnswers" Background="#FFF">
+      <Text Alignment="Center">todo: My Answers</Text>
+
+      <WhileActive>
+        <Set tabBar.LayoutElement="myAnswersTab" />
+        <Callback Handler="{goToMyAnswers}" />
+      </WhileActive>
+      <EnteringAnimation>
+        <Move X="1" RelativeTo="ParentSize" />
+        <DebugAction Message="myAnswers" />
       </EnteringAnimation>
       <ExitingAnimation>
         <Move X="-1" RelativeTo="ParentSize" />
@@ -30,6 +129,13 @@
 
     <Page ux:Name="createQuestion" Background="#FFF">
       <CreateQuestion />
+      
+      <WhileActive>
+        <Change backButton.Opacity="1" Duration="0.3"/>
+        <Change addButton.Opacity="0" Duration="0.3"/>
+        <Change settings.Opacity="0" Duration="0.3"/>
+        <Change tabBar.Visibility="Collapsed" />
+      </WhileActive>
       <EnteringAnimation>
         <Move X="1" RelativeTo="ParentSize" />
       </EnteringAnimation>

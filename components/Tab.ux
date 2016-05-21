@@ -1,0 +1,4 @@
+<Panel ux:Class="Tab" ux:Name="self" ClipToBounds="false" Margin="0,0,0,4" Background="#3D206A">
+  <string ux:Property="Text" />
+  <Text Value="{Property self.Text}" TextColor="#FFF" Font="RobotoMedium" Alignment="Center" />
+</Panel>

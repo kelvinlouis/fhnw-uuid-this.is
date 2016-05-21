@@ -3,4 +3,5 @@
   <Text ux:Class="IconChevronLeft" Font="fa">&#xf053;</Text>
   <Text ux:Class="IconSend" Font="fa">&#xf1d8;</Text>
   <Text ux:Class="IconSmile" Font="fa">&#xf118;</Text>
+  <Text ux:Class="IconPlusCircle" Font="fa">&#xf055;</Text>
 </Panel>
