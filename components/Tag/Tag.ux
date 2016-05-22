@@ -1,11 +1,11 @@
-<Rectangle ux:Class="Tag" Fill="#CCC" Margin="3" Alignment="Center">
+<Rectangle ux:Class="Tag" Fill="#CAC4F2" Margin="3" Alignment="Center" CornerRadius="10">
   <JavaScript File="Tag.js" />
 
   <string ux:Property="Text" />
-  <WrapPanel>
+  <StackPanel Padding="10,5,10,5" Orientation="Horizontal">
     <Text>#</Text>
     <Text Value="{Property this.Text}" />
-  </WrapPanel>
+  </StackPanel>
   <WhileTrue Value="{selected}">
     <Change this.Fill="#FFF" />
     <RaiseUserEvent Name="TagToggle">

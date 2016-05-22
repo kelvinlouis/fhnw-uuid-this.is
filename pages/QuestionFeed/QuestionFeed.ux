@@ -1,16 +1,12 @@
 <DockPanel ux:Class="QuestionFeed">
-  <WrapPanel Dock="Top" Background="#79f">
-    <Rectangle>
-      <WrapPanel>
-        <Tag Text="Food" />
-        <Tag Text="Japan" />
-        <Tag Text="Travel" />
-      </WrapPanel>
-    </Rectangle>
-  </WrapPanel>
+  <StackPanel Dock="Top" Orientation="Horizontal" Padding="10" Background="#5C16A3">
+    <Tag Text="Food" />
+    <Tag Text="Japan" />
+    <Tag Text="Travel" />
+  </StackPanel>
 
   <ScrollView>
-    <StackPanel>
+    <StackPanel Padding="10,10,10,10" ItemSpacing="15">
       <Each Items="{questions}">
         <QuestionItem />
       </Each>

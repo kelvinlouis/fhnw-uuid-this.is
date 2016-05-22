@@ -1,6 +1,6 @@
 <Panel ux:Class="MyAnswers">
   <ScrollView>
-    <StackPanel>
+    <StackPanel Padding="10,10,10,10" ItemSpacing="15">
       <Each Items="{myAnswers}">
         <QuestionItem />
       </Each>

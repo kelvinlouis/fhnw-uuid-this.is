@@ -1,16 +1,21 @@
-<Panel ux:Class="QuestionItem">
-  <DockPanel Margin="7,1,7,0">
-    <Circle Height="50" Width="50" Dock="Left" Margin="7,7,0,7" Alignment="TopLeft">
-      <ImageFill Source="{DataToResource image}" />
-    </Circle>
+<DockPanel ux:Class="QuestionItem">
+  <Rectangle Height="60" Width="60" Dock="Right" Alignment="TopLeft" CornerRadius="5">
+    <ImageFill Source="{DataToResource image}"/>
+  </Rectangle>
 
-    <StackPanel Margin="7,3,7,7">
-      <Text Font="Regular" Value="{title}" FontSize="16" />
-      <Text Font="Regular" Value="{author}" FontSize="16" TextColor="#999" />
-      <Text Font="Light" TextWrapping="Wrap" Value="{answerCount}" FontSize="14" TextColor="#000" />
+  <StackPanel>
+    <Text TextWrapping="Wrap" Font="Regular" Value="{title}" FontSize="18" Margin="5,0,0,0" />
+
+    <StackPanel Dock="Bottom" Orientation="Horizontal" Padding="5,5,0,0">
+      <IconCommentO FontSize="16" Alignment="Center" TextColor="#666" Margin="0,0,5,0" />
+      <Text Font="Light" TextWrapping="Wrap" Value="{answerCount}" FontSize="16" Alignment="Center" TextColor="#666" />
+      <IconUser FontSize="16" Alignment="Center" TextColor="#666" Margin="20,0,0,0" />
+      <Text Font="Light" Value="{author}" FontSize="16" Margin="5,0,0,0" TextColor="#666" />
+      <Text Font="Light" Value="{time}" FontSize="16" Margin="20,0,0,0" TextColor="#666" />
     </StackPanel>
-  </DockPanel>
+  </StackPanel>
+
   <Clicked>
     <Callback Handler="{selectQuestion}" />
   </Clicked>
-</Panel>
+</DockPanel>
