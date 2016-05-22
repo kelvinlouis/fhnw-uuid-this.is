@@ -14,7 +14,7 @@
     <Tag Text="Health" />
     <Tag Text="Beauty" />
     <Tag Text="Cocktail" />
-    <Tag Text="Germany" />
+    <Tag Text="Tokyo" />
   </WrapPanel>
   <Autocomplete />
   <!-- todo add autocomplete -->

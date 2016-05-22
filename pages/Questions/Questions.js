@@ -12,6 +12,11 @@ var Observable = require('FuseJS/Observable'),
     isMyQuestion = Observable(false),
     previousPage = null;
 
+// Create Observables for answers of questions
+questions.forEach(function(x) {
+  x.answers = Observable.apply(null, x.answers);
+});
+
 module.exports = {
   questions: questions,
   activePage: activePage,
@@ -80,6 +85,25 @@ module.exports = {
 
     activePage.value = pages.getAt(0);
     isMyQuestion.value = false;
+
+    e.data.title.value = '';
+    e.data.desc.value = '';
+  },
+
+  enteredMessage: function(e) {
+    var answer = {
+      author: 'Sam',
+      image: 'author4',
+      message: e.data.message.value,
+      time: 'Just Now'
+    };
+
+    activeQuestion.value.answers.add(answer);
+    e.data.message.value = '';
+
+    if (myAnswers.indexOf(activeQuestion.value) === -1) {
+      myAnswers.add(activeQuestion.value);
+    }
   }
 };
 
@@ -90,7 +114,7 @@ function Question(title, description, image, author, time) {
     this.author = author;
     this.time = time;
     this.tags = ['Japan', 'Tokyo', 'Food'];
-    this.answers = [];
+    this.answers = Observable();
     this.answerCount = 0;
     this.myQuestion = true;
   }

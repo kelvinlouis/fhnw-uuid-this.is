@@ -7,12 +7,12 @@
     <Font File="../../Assets/Fonts/Lato-Regular.ttf" />
   </Text>
 
-  <DockPanel Margin="10,10,0,5">
+  <DockPanel Margin="10">
     <Circle Dock="Left" Alignment="TopCenter" Width="45" Height="45">
       <ImageFill Source="{DataToResource image}" />
     </Circle>
 
-    <DockPanel Margin="10,4,10,0">
+    <DockPanel Margin="10,0,10,0">
       <StackPanel Dock="Top" Orientation="Horizontal">
         <Name Value="{author}" Margin="0,0,10,0" />
         <DateTime Value="{time}" />

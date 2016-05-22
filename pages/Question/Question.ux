@@ -2,7 +2,11 @@
     <string ux:Key="Title" ux:Value="Question"/>
     <Text ux:Class="T" TextColor="LightGray" Alignment="CenterLeft" />
     <DockPanel>
-      <ChatBox Dock="Bottom" />
+      <ChatBox Dock="Bottom">
+        <Clicked>
+          <BringIntoView TargetNode="bottomPlaceholder" />
+        </Clicked>
+      </ChatBox>
 
       <Panel Color="White">
         <ScrollView>
@@ -16,6 +20,7 @@
                 <WhileEmpty Items="{activeQuestion.answers}">
                   <Text TextWrapping="Wrap" Alignment="Center" Margin="0,20,0,0">There are no answers to this question yet</Text>
                 </WhileEmpty>
+                <Panel ux:Name="bottomPlaceholder" />
               </StackPanel>
 
               <ScrollingAnimation From="0" To="150">
