@@ -8,7 +8,8 @@ var Observable = require('FuseJS/Observable'),
       activePage.value = 'LoginSetInterests';
     },
     selectedInterests: function() {
-      activePage.value = 'QuestionFeed';
+      console.log('test');
+      activePage.value = 'Questions';
     },
     createQuestion: function() {
       activePage.value = 'CreateQuestion';

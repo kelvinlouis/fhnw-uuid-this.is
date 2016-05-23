@@ -53,22 +53,19 @@
     </DockPanel>
     <Rectangle Height="100%" Fill="Black" Opacity="0.8">
     </Rectangle>
-  </Panel> -->
-  
+  </Panel>
+   -->
+  <!-- Hack: Using Paddings to increase clickable area. Alignment=Center reduces available area ... -->
   <DockPanel>
     <StackPanel Dock="Top" Color="TicketPurple" Padding="10,10,10,0">
       <Grid Rows="1*,1*">
-        <Grid Columns="40,1*,30,30" Alignment="Top" Height="60">
-          <IconChevronLeft ux:Name="backButton" FontSize="20" Opacity="0" TextColor="#FFF" Alignment="VerticalCenter" Clicked="{goBack}" />
-          <Text Value="{activePageTitle}" FontSize="20" TextColor="LightGray" Alignment="VerticalCenter"/>
-          <IconPlusCircle ux:Name="addButton" FontSize="20" Opacity="1" TextColor="#FFF" Alignment="VerticalCenter" Clicked="{goToCreateQuestion}" />
+        <Grid Columns="40,1*,40,40" Alignment="Top" Height="60">
+          <IconChevronLeft ux:Name="backButton" FontSize="20" Padding="0,45,0,0" Opacity="0" TextColor="#FFF" Clicked="{goBack}" />
+          <Text Value="{activePageTitle}" FontSize="20" Padding="0,40,0,0" TextColor="LightGray" />
+          <IconPlusCircle ux:Name="addButton" FontSize="20" Padding="0,40,0,0" TextAlignment="Center" Opacity="1" TextColor="#FFF" Clicked="{goToCreateQuestion}" />
           <Panel>
-            <Grid ux:Name="settingsButton" Rows="7,7,7" Alignment="VerticalCenter" Opacity="1" Clicked="{goToSettings}">
-              <Circle Color="LightGray" Width="4" Height="4"/>
-              <Circle Color="LightGray" Width="4" Height="4"/>
-              <Circle Color="LightGray" Width="4" Height="4"/>
-            </Grid>
-            <IconCheckCircle ux:Name="closeButton" FontSize="20" Opacity="0" TextColor="#FFF" Alignment="VerticalCenter" Clicked="{closeQuestion}" />
+            <IconDots ux:Name="settingsButton" FontSize="20" Padding="0,40,0,0" TextAlignment="Center" Opacity="1" TextColor="#FFF" Clicked="{goToSettings}" />
+            <IconCheckCircle ux:Name="closeButton" FontSize="20" Padding="0,40,0,0" TextAlignment="Center" Opacity="0" TextColor="#FFF" Clicked="{closeQuestion}" />
           </Panel>
         </Grid>
       </Grid>

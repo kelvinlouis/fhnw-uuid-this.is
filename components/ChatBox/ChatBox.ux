@@ -11,4 +11,7 @@
       </Circle>
     </DockPanel>
   </Rectangle>
+  <WhileKeyboardVisible>
+    <Move Y="-1" RelativeTo="Keyboard" />
+  </WhileKeyboardVisible>
 </Panel>

@@ -1,22 +1,40 @@
-<Panel ux:Class="Login">
+<Panel ux:Class="Login" Padding="10">
+  <LinearGradient>
+    <GradientStop Color="TicketPurple" Offset="0" />
+    <GradientStop Color="#D7C4CA" Offset="1" />
+  </LinearGradient>
+
   <HierarchicalNavigation Active="choose" />
 
   <Page ux:Name="choose">
-    <StackPanel>
-      <Text>this.is</Text>
+    <StackPanel Alignment="Center">
+      <Text Font="Regular" FontSize="64" TextColor="#FFF" Value="this.is" Alignment="Center" />
+      <Text Font="Regular" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="#FFF" Margin="0,20,0,80" Value="The place where you can ask questions in real time" Alignment="Center" />
+      <StackPanel ItemSpacing="10">
+        <LightButton Color="#3b5998">
+          <StackPanel Orientation="Horizontal" Alignment="Center">
+            <IconFacebook Margin="0,0,10,0" FontSize="18" TextColor="#FFF" />
+            <Text Value="Login with Facebook" FontSize="18" TextColor="#FFF" />
+          </StackPanel>
+          <Clicked>
+            <Callback Handler="{completeLogin}" />
+            <!-- <NavigateTo Target="facebook" /> -->
+          </Clicked>  
+        </LightButton>
 
-      <Button Text="Login with Twitter">
-        <Clicked>
-          <NavigateTo Target="twitter" />
-        </Clicked>  
-      </Button>
+        <LightButton Color="#4099FF">
+          <StackPanel Orientation="Horizontal" Alignment="Center">
+            <IconTwitter Margin="0,0,10,0" FontSize="18" TextColor="#FFF" />
+            <Text Value="Login with Twitter" FontSize="18" TextColor="#FFF" />
+          </StackPanel>
+          <Clicked>
+            <Callback Handler="{completeLogin}" />
+            <!-- <NavigateTo Target="twitter" /> -->
+          </Clicked>  
+        </LightButton>
+      </StackPanel>
 
-      <Button Text="Login with Facebook">
-        <Clicked>
-          <NavigateTo Target="facebook" />
-        </Clicked>  
-      </Button>
-      <Text>by logging in you accept the TOC</Text>
+      <Text TextColor="#FFF" Alignment="Center" Margin="0,20,0,0">by logging in you accept the TOC</Text>
     </StackPanel>
   </Page>
 

@@ -8,6 +8,7 @@
       "time": "11:00",
       "tags": ["Japan", "Ramen"],
       "answerCount": 6,
+      "closed": false,
       "answers": [
         {
           "author": "Mike",
@@ -55,6 +56,7 @@
       "time": "11:00",
       "tags": ["Japan", "Ramen"],
       "answerCount": 6,
+      "closed": false,
       "answers": [
         {
           "author": "Mike",

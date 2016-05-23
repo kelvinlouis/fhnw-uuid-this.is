@@ -6,6 +6,9 @@
         <Clicked>
           <BringIntoView TargetNode="bottomPlaceholder" />
         </Clicked>
+        <Tapped>
+          <BringIntoView TargetNode="bottomPlaceholder" />
+        </Tapped>
       </ChatBox>
 
       <Panel Color="White">

@@ -1,5 +1,5 @@
 <DockPanel ux:Class="QuestionFeed">
-  <StackPanel Dock="Top" Orientation="Horizontal" Padding="10" Background="#5C16A3">
+  <StackPanel Dock="Top" Orientation="Horizontal" Padding="10" Background="#927B9E">
     <Tag Text="Food" />
     <Tag Text="Japan" />
     <Tag Text="Travel" />

@@ -7,7 +7,7 @@
     <StackPanel>
       <Section>
         <TextCounter Value="{titleCounter}" />
-        <TextInput Value="{title}" IsMultiline="true" PlaceholderText="Title" PlaceholderColor="#CCC" />
+        <TextInput Value="{title}" Height="60" IsMultiline="true" PlaceholderText="Enter Your Question" PlaceholderColor="#CCC" />
       </Section>
 
       <Section ux:Name="imagePlaceholder" Visibility="Visible">
@@ -15,7 +15,7 @@
           <Halftone Spacing="1" />
           <WrapPanel Alignment="Center">
             <IconPlusCircle Margin="0,0,5,0" TextColor="#FFF" /> 
-            <Text TextColor="#FFF">Add Picture</Text>
+            <Text TextColor="#FFF">Add Picture (optional)</Text>
           </WrapPanel>
 
           <Clicked>
@@ -48,9 +48,8 @@
 
       <Section>
         <TextCounter Value="{descCounter}" />
-        <TextInput Value="{desc}" IsMultiline="true" PlaceholderText="Description" PlaceholderColor="#CCC" />
+        <TextInput Height="80" Value="{desc}" IsMultiline="true" PlaceholderText="Description (optional)" PlaceholderColor="#CCC" />
       </Section>
-
     </StackPanel>
   </ScrollView>
   <PurpleButton Dock="Bottom" Text="Ask Question" Alignment="Bottom" Clicked="{createQuestion}" />

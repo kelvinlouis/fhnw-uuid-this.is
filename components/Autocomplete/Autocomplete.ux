@@ -1,7 +1,7 @@
 <StackPanel ux:Class="Autocomplete">
   <JavaScript File="Autocomplete.js" />
   
-  <TextInput ValueChanged="{valueChanged}" />
+  <TextInput ValueChanged="{valueChanged}" PlaceholderText="Enter a topic (without #)" PlaceholderColor="#CCC" />
   <StackPanel>
   </StackPanel>
 </StackPanel>

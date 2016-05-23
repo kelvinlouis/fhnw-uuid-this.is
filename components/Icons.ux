@@ -13,4 +13,7 @@
   <Text ux:Class="IconTimesCircle" Font="fa">&#xf057;</Text>
   <Text ux:Class="IconCheckCircle" Font="fa">&#xf058;</Text>
   <Text ux:Class="IconUser" Font="fa">&#xf007;</Text>
+  <Text ux:Class="IconFacebook" Font="fa">&#xf09a;</Text>
+  <Text ux:Class="IconTwitter" Font="fa">&#xf099;</Text>
+  <Text ux:Class="IconDots" Font="fa">&#xf142;</Text>
 </Panel>

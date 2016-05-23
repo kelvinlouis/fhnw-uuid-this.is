@@ -15,6 +15,8 @@ var Observable = require('FuseJS/Observable'),
 // Create Observables for answers of questions
 questions.forEach(function(x) {
   x.answers = Observable.apply(null, x.answers);
+  x.answerCount = Observable(x.answerCount);
+  x.closed = Observable(x.closed);
 });
 
 module.exports = {
@@ -41,10 +43,7 @@ module.exports = {
     isMyQuestion.value = e.data.myQuestion || false;
   },
 
-  goBack: function() {
-    activePage.value = previousPage;
-    previousPage = null;
-  },
+  goBack: goBack,
 
   goToFeed: function() {
     previousPage = activePage.value;
@@ -83,38 +82,69 @@ module.exports = {
 
     questions.insertAt(0, q);
 
-    activePage.value = pages.getAt(0);
-    isMyQuestion.value = false;
+    isMyQuestion.value = true;
+
+    myQuestions.insertAt(0, q);
 
     e.data.title.value = '';
     e.data.desc.value = '';
+
+    activePage.value = pages.getAt(0);
   },
 
   enteredMessage: function(e) {
     var answer = {
-      author: 'Sam',
-      image: 'author4',
-      message: e.data.message.value,
-      time: 'Just Now'
-    };
+          author: 'Sam',
+          image: 'author4',
+          message: e.data.message.value,
+          time: 'Just Now'
+        };
 
     activeQuestion.value.answers.add(answer);
     e.data.message.value = '';
 
     if (myAnswers.indexOf(activeQuestion.value) === -1) {
-      myAnswers.add(activeQuestion.value);
+      if (activeQuestion.value.isMyQuestion === false) {
+        myAnswers.add(activeQuestion.value);
+      }
     }
+
+    activeQuestion.value.answerCount.value++;
+  },
+
+  closeQuestion: function(e) {
+    activeQuestion.value.closed.value = true;
+    questions.remove(activeQuestion.value);
+
+    goBack();
   }
 };
 
 function Question(title, description, image, author, time) {
-    this.title = title;
-    this.description = description;
-    this.image = image;
-    this.author = author;
-    this.time = time;
-    this.tags = ['Japan', 'Tokyo', 'Food'];
-    this.answers = Observable();
-    this.answerCount = 0;
-    this.myQuestion = true;
-  }
+  this.title = title;
+  this.description = description;
+  this.image = image;
+  this.author = author;
+  this.time = time;
+  this.tags = ['Japan', 'Tokyo', 'Food'];
+  this.closed = Observable(false);
+  this.answers = Observable({
+    author: 'Isa',
+    image: 'author2',
+    message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum vel odio feugiat dignissim. Mauris nec tincidunt urna. Aliquam maximus egestas sapien, a dignissim arcu mattis quis?',
+    time: 'Just Now'
+  }, {
+    author: 'Kaito',
+    image: 'author3',
+    message: ' Nam a diam vitae arcu lacinia molestie. Duis id lacus dolor. Quisque vel urna quis ipsum lobortis accumsan id sed ligula.',
+    time: 'Just Now'
+  });
+
+  this.answerCount = Observable(this.answers.length);
+  this.myQuestion = true;
+}
+
+ function goBack() {
+  activePage.value = previousPage;
+  previousPage = null;
+}
