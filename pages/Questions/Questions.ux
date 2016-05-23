@@ -60,12 +60,12 @@
     <StackPanel Dock="Top" Color="TicketPurple" Padding="10,10,10,0">
       <Grid Rows="1*,1*">
         <Grid Columns="40,1*,40,40" Alignment="Top" Height="60">
-          <IconChevronLeft ux:Name="backButton" FontSize="20" Padding="0,45,0,0" Opacity="0" TextColor="#FFF" Clicked="{goBack}" />
-          <Text Value="{activePageTitle}" FontSize="20" Padding="0,40,0,0" TextColor="LightGray" />
-          <IconPlusCircle ux:Name="addButton" FontSize="20" Padding="0,40,0,0" TextAlignment="Center" Opacity="1" TextColor="#FFF" Clicked="{goToCreateQuestion}" />
+          <IconChevronLeft ux:Name="backButton" FontSize="20" Padding="0,17,0,0" Opacity="0" TextColor="#FFF" Clicked="{goBack}" />
+          <Text Value="{activePageTitle}" FontSize="20" Padding="0,15,0,0" TextColor="LightGray" />
+          <IconPlusCircle ux:Name="addButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Opacity="1" TextColor="#FFF" Clicked="{goToCreateQuestion}" />
           <Panel>
-            <IconDots ux:Name="settingsButton" FontSize="20" Padding="0,40,0,0" TextAlignment="Center" Opacity="1" TextColor="#FFF" Clicked="{goToSettings}" />
-            <IconCheckCircle ux:Name="closeButton" FontSize="20" Padding="0,40,0,0" TextAlignment="Center" Opacity="0" TextColor="#FFF" Clicked="{closeQuestion}" />
+            <IconDots ux:Name="settingsButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Opacity="1" TextColor="#FFF" Clicked="{goToSettings}" />
+            <IconCheckCircle ux:Name="closeButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Opacity="0" TextColor="#FFF" Clicked="{closeQuestion}" />
           </Panel>
         </Grid>
       </Grid>
@@ -207,6 +207,10 @@
       <ExitingAnimation>
         <Move X="-1" RelativeTo="ParentSize" />
       </ExitingAnimation>
+
+      <OnBackButton>
+        <Callback Handler="{goBack}" />
+      </OnBackButton>
     </Page>
   </DockPanel>
 </Panel>

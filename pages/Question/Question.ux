@@ -62,4 +62,7 @@
         </Grid>
       </Panel>
     </DockPanel>
+    <OnBackButton>
+      <Callback Handler="{goBack}" />
+    </OnBackButton>
   </DockPanel>

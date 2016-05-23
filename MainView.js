@@ -1,5 +1,5 @@
 var Observable = require('FuseJS/Observable'),
-    activePage = Observable('Questions');
+    activePage = Observable('Login');
 
   module.exports = {
     // Simple Callback-Routing
@@ -8,7 +8,6 @@ var Observable = require('FuseJS/Observable'),
       activePage.value = 'LoginSetInterests';
     },
     selectedInterests: function() {
-      console.log('test');
       activePage.value = 'Questions';
     },
     createQuestion: function() {
