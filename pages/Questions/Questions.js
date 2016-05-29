@@ -125,6 +125,19 @@ module.exports = {
     Globl.tags.removeWhere(function(tag) {
       return tag.name === e.data.name;
     });
+  },
+
+  addTag: function(e) {
+    var tag = { name: e.data.name },
+        exists = false;
+
+    Globl.tags.forEach(function(item) {
+      if (item.name === tag.name) exists = true;
+    });
+    
+    if (!exists) {
+      Globl.tags.add({ name: e.data.name });
+    }
   }
 };
 

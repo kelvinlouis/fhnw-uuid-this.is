@@ -1,5 +1,14 @@
 <StackPanel ux:Class="Autocomplete">
   <JavaScript File="Autocomplete.js" />
   
-  <TextInput ValueChanged="{valueChanged}" Value="{name}" PlaceholderText="Enter a topic without # (optional)" TextColor="#FFF" PlaceholderColor="#FFF" />
+  <TextInput ValueChanged="{valueChanged}" Value="{text}" PlaceholderText="Enter a topic without # (optional)" TextColor="#FFF" PlaceholderColor="#FFF" />
+
+  <StackPanel ItemSpacing="5">
+    <Each Items="{results}">
+      <Panel Height="45" Clicked="{addTag}">
+        <Text Value="{name}" Alignment="VerticalCenter" Padding="10,0,0,0" />
+        <Rectangle Width="100%" Height="100%" Fill="#FFF" Opacity="0.5" />
+      </Panel>
+    </Each>
+  </StackPanel>
 </StackPanel>

@@ -7,8 +7,7 @@ var Observable = require('FuseJS/Observable'),
       { name: 'Japan', selected: Observable(false) },
       { name: 'Health', selected: Observable(false) },
       { name: 'Beauty', selected: Observable(false) },
-      { name: 'Cocktail', selected: Observable(false) },
-      { name: 'Tokyo', selected: Observable(false) }
+      { name: 'Cocktail', selected: Observable(false) }
     );
 
 module.exports = {
@@ -36,6 +35,16 @@ module.exports = {
     },
 
     addTag: function(e) {
-      tags.add({ name: e.data.name });
+      var tag = { name: e.data.name, selected: Observable(true) },
+          exists = false;
+
+      tags.forEach(function(item) {
+        if (item.name === tag.name) exists = true;
+      });
+      
+      if (!exists) {
+        tags.add(tag);
+        Globl.tags.add({ name: e.data.name });
+      }
     }
 };

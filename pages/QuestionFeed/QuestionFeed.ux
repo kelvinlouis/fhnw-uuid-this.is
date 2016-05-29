@@ -1,8 +1,11 @@
 <DockPanel ux:Class="QuestionFeed">
-  <StackPanel Dock="Top" Orientation="Horizontal" Padding="10" MinHeight="55" Background="#927B9E">
-    <Each Items="{tags}">
-      <Tag Clicked="{removeTag}" />
-    </Each>
+  <StackPanel Dock="Top" Padding="10" MinHeight="55" Background="#927B9E" ItemSpacing="10">
+    <WrapPanel>
+      <Each Items="{tags}">
+        <Tag Clicked="{removeTag}" />
+      </Each>
+    </WrapPanel>
+    <Autocomplete />
   </StackPanel>
 
   <ScrollView>

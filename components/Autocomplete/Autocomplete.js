@@ -1,9 +1,37 @@
 var Observable = require("FuseJS/Observable"),
-    name = Observable('');
+    text = Observable(''),
+    results = Observable(),
+    list = Observable(
+      { name: 'Food' },
+      { name: 'Math' },
+      { name: 'Japan' },
+      { name: 'Health' },
+      { name: 'Beauty' },
+      { name: 'Cocktail' },
+      { name: 'Ramen' },
+      { name: 'Tokyo' },
+      { name: 'Noodles' },
+      { name: 'Cooking' },
+      { name: 'Asian' },
+      { name: 'Traveling' }
+    );
 
 module.exports = {
-  name: name,
+  text: text,
+  results: results,
   valueChanged: function(args) {
-    console.log(args.value);
+    var regexp;
+
+    results.clear();
+
+    if (args.value.length > 0) {
+      regexp = new RegExp(args.value, 'gi');
+
+      list.forEach(function(item) {
+        if (regexp.test(item.name) === true ) {
+          results.add(item);
+        }
+      });
+    }
   }
 };
