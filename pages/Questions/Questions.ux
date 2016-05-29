@@ -10,62 +10,17 @@
   <FileImageSource ux:Key="author3" File="../../Assets/Authors/author3.jpg" />
   <FileImageSource ux:Key="author4" File="../../Assets/Authors/sam.jpg" />
   
-  <!-- <Panel ux:Name="closeQuestionOverlay" Opacity="1">
-    <DockPanel Height="70%" Background="White" Opacity="1" Margin="10,0,10,0" Padding="30">
-      <Text TextWrapping="Wrap" Alignment="Center" Dock="Top" Margin="0,0,0,30">
-        You're closing your question. Who was helpful finding an answer?
-      </Text>
-      <ScrollView>
-        <StackPanel ItemSpacing="20">
-          <DockPanel Height="45">
-            <Circle Dock="Left" Alignment="TopCenter" Width="45" Height="45">
-              <ImageFill File="../../Assets/Authors/author1.jpg" />
-            </Circle>
-            <Text Value="Mike" Alignment="VerticalCenter" Margin="20,0,0,0" />
-            <Switch Value="False" Dock="Right" />
-          </DockPanel>
-          <DockPanel Height="45">
-            <Circle Dock="Left" Alignment="TopCenter" Width="45" Height="45">
-              <ImageFill File="../../Assets/Authors/author2.jpg" />
-            </Circle>
-            <Text Value="Isa" Alignment="VerticalCenter" Margin="20,0,0,0" />
-            <Switch Value="False" Dock="Right" />
-          </DockPanel>
-          <DockPanel Height="45">
-            <Circle Dock="Left" Alignment="TopCenter" Width="45" Height="45">
-              <ImageFill File="../../Assets/Authors/author3.jpg" />
-            </Circle>
-            <Text Value="Kaito" Alignment="VerticalCenter" Margin="20,0,0,0" />
-            <Switch Value="False" Dock="Right" />
-          </DockPanel>
-        </StackPanel>
-      </ScrollView>
-      <PurpleButton Text="Cancel" Dock="Bottom" Margin="0,10,0,0">
-        <Clicked>
-          <Change closeQuestionOverlay.Opacity="0" Duration="0.3" />
-        </Clicked>
-      </PurpleButton>
-      <PurpleButton Text="Close Question" Dock="Bottom">
-        <Clicked>
-          <Change closeQuestionOverlay.Opacity="0" Duration="0.3" />
-        </Clicked>
-      </PurpleButton>
-    </DockPanel>
-    <Rectangle Height="100%" Fill="Black" Opacity="0.8">
-    </Rectangle>
-  </Panel>
-   -->
   <!-- Hack: Using Paddings to increase clickable area. Alignment=Center reduces available area ... -->
   <DockPanel>
     <StackPanel Dock="Top" Color="TicketPurple" Padding="10,10,10,0">
       <Grid Rows="1*,1*">
         <Grid Columns="40,1*,40,40" Alignment="Top" Height="60">
-          <IconChevronLeft ux:Name="backButton" FontSize="20" Padding="0,17,0,0" Opacity="0" TextColor="#FFF" Clicked="{goBack}" />
+          <IconChevronLeft ux:Name="backButton" FontSize="20" Padding="0,17,0,0" Visibility="Collapsed" TextColor="#FFF" Clicked="{goBack}" />
           <Text Value="{activePageTitle}" FontSize="20" Padding="0,15,0,0" TextColor="LightGray" />
-          <IconPlusCircle ux:Name="addButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Opacity="1" TextColor="#FFF" Clicked="{goToCreateQuestion}" />
+          <IconPlusCircle ux:Name="addButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Visibility="Visible" TextColor="#FFF" Clicked="{goToCreateQuestion}" />
           <Panel>
-            <IconDots ux:Name="settingsButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Opacity="1" TextColor="#FFF" Clicked="{goToSettings}" />
-            <IconCheckCircle ux:Name="closeButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Opacity="0" TextColor="#FFF" Clicked="{closeQuestion}" />
+            <IconDots ux:Name="settingsButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Visibility="Visible" TextColor="#FFF" Clicked="{goToSettings}" />
+            <IconCheckCircle ux:Name="closeButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Visibility="Collapsed" TextColor="#FFF" Clicked="{closeQuestion}" />
           </Panel>
         </Grid>
       </Grid>
@@ -125,13 +80,13 @@
     <Page ux:Name="question" Background="#FFF">
       <Question />
       <WhileActive>
-        <Change backButton.Opacity="1" Duration="0.3"/>
-        <Change addButton.Opacity="0" Duration="0.3"/>
-        <Change settingsButton.Opacity="0" Duration="0.3"/>
+        <Change backButton.Visibility="Visible"/>
+        <Change addButton.Visibility="Collapsed"/>
+        <Change settingsButton.Visibility="Collapsed"/>
         <Change tabBar.Visibility="Collapsed" />
 
         <WhileTrue Value="{isMyQuestion}">
-          <Change closeButton.Opacity="1" Duration="0.3"/>
+          <Change closeButton.Visibility="Visible"/>
         </WhileTrue>
       </WhileActive>
       <EnteringAnimation>
@@ -179,9 +134,9 @@
       <CreateQuestion />
       
       <WhileActive>
-        <Change backButton.Opacity="1" Duration="0.3"/>
-        <Change addButton.Opacity="0" Duration="0.3"/>
-        <Change settingsButton.Opacity="0" Duration="0.3"/>
+        <Change backButton.Visibility="Visible"/>
+        <Change addButton.Visibility="Collapsed"/>
+        <Change settingsButton.Visibility="Collapsed"/>
         <Change tabBar.Visibility="Collapsed" />
       </WhileActive>
       <EnteringAnimation>
@@ -196,9 +151,9 @@
       <Text Alignment="Center">todo: Settings</Text>
       
       <WhileActive>
-        <Change backButton.Opacity="1" Duration="0.3"/>
-        <Change addButton.Opacity="0" Duration="0.3"/>
-        <Change settingsButton.Opacity="0" Duration="0.3"/>
+        <Change backButton.Visibility="Visible"/>
+        <Change addButton.Visibility="Collapsed"/>
+        <Change settingsButton.Visibility="Collapsed"/>
         <Change tabBar.Visibility="Collapsed" />
       </WhileActive>
       <EnteringAnimation>

@@ -7,26 +7,29 @@
   <ColorPalette />
   <Icons />
 
-  <DockPanel>
-    <Panel Dock="Top" Margin="0,-1,0,0" Color="TicketPurple">
-      <StatusBarBackground/>
-    </Panel>
+  <Panel Height="100%" Width="100%">
+    <Toast Alignment="BottomCenter" />
+    <DockPanel>
+      <Panel Dock="Top" Margin="0,-1,0,0" Color="TicketPurple">
+        <StatusBarBackground/>
+      </Panel>
 
-    <iOS.StatusBarConfig Style="Light" />
+      <iOS.StatusBarConfig Style="Light" />
 
-    <PageControl Active="{activePage}">
-      <!-- <Page ux:Name="Intro" Background="#FFF">
-        <Intro />
-      </Page> -->
-      <Page ux:Name="Login" Background="#FFF">
-        <Login />
-      </Page>
-      <Page ux:Name="LoginSetInterests" Background="#FFF">
-        <LoginSetInterests />
-      </Page>
-      <Page ux:Name="Questions" Background="#FFF">
-        <Questions />
-      </Page>
-    </PageControl>
-  </DockPanel>
+      <PageControl Active="{activePage}">
+        <!-- <Page ux:Name="Intro" Background="#FFF">
+          <Intro />
+        </Page> -->
+        <Page ux:Name="Login" Background="#FFF">
+          <Login />
+        </Page>
+        <Page ux:Name="LoginSetInterests" Background="#FFF">
+          <LoginSetInterests />
+        </Page>
+        <Page ux:Name="Questions" Background="#FFF">
+          <Questions />
+        </Page>
+      </PageControl>
+    </DockPanel>
+  </Panel>
 </App>
