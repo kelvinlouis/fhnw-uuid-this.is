@@ -1,14 +1,31 @@
 <StackPanel ux:Class="Autocomplete">
   <JavaScript File="Autocomplete.js" />
   
-  <TextInput ValueChanged="{valueChanged}" Value="{text}" PlaceholderText="Enter a topic without # (optional)" TextColor="#FFF" PlaceholderColor="#FFF" />
+  <DockPanel>
+    <TextInput ux:Name="input" ValueChanged="{valueChanged}" Value="{text}" PlaceholderText="Enter a topic without # (optional)" TextColor="#FFF" PlaceholderColor="#FFF" />
 
-  <StackPanel ItemSpacing="5">
-    <Each Items="{results}">
-      <Panel Height="45" Clicked="{addTag}">
-        <Text Value="{name}" Alignment="VerticalCenter" Padding="10,0,0,0" />
-        <Rectangle Width="100%" Height="100%" Fill="#FFF" Opacity="0.5" />
-      </Panel>
-    </Each>
-  </StackPanel>
+    <IconTimesCircle ux:Name="clearButton" Dock="Right" Alignment="Center" TextColor="#FFF" Margin="0,-10,0,0" FontSize="20" Opacity="0">
+      <WhileTrue Value="{clearEnabled}">
+        <Change clearButton.Opacity="1" Duration="0.3" />
+        <Clicked>
+          <Callback Handler="{clear}" />
+        </Clicked>
+      </WhileTrue>
+    </IconTimesCircle>
+  </DockPanel>
+  
+  <ScrollView>
+    <StackPanel ItemSpacing="5">
+      <Each Items="{results}">
+        <Panel Height="45">
+          <Text Value="{name}" Alignment="VerticalCenter" Padding="10,0,0,0" />
+          <Rectangle Width="100%" Height="100%" Fill="#FFF" Opacity="0.5" />
+          <Clicked>
+            <Callback Handler="{addTag}" />
+            <!-- <GiveFocus Target="input" /> -->
+          </Clicked>
+        </Panel>
+      </Each>
+    </StackPanel>
+  </ScrollView>
 </StackPanel>

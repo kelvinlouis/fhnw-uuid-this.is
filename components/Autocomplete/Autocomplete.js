@@ -1,6 +1,7 @@
 var Observable = require("FuseJS/Observable"),
     text = Observable(''),
     results = Observable(),
+    clearEnabled = Observable(false),
     list = Observable(
       { name: 'Food' },
       { name: 'Math' },
@@ -19,12 +20,14 @@ var Observable = require("FuseJS/Observable"),
 module.exports = {
   text: text,
   results: results,
+  clearEnabled: clearEnabled,
   valueChanged: function(args) {
     var regexp;
 
     results.clear();
 
     if (args.value.length > 0) {
+      clearEnabled.value = true;
       regexp = new RegExp(args.value, 'gi');
 
       list.forEach(function(item) {
@@ -32,6 +35,11 @@ module.exports = {
           results.add(item);
         }
       });
+    } else {
+      clearEnabled.value = false;
     }
+  },
+  clear: function() {
+    text.value = '';
   }
 };

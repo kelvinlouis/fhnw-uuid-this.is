@@ -52,5 +52,14 @@
       </Section>
     </StackPanel>
   </ScrollView>
-  <PurpleButton Dock="Bottom" Text="Ask Question" Alignment="Bottom" Clicked="{createQuestion}" />
+  <PurpleButton ux:Name="createButton" Dock="Bottom" Text="Ask Question" Alignment="Bottom">
+    <WhileTrue Value="{enabledButton}">
+      <Clicked>
+        <Callback Handler="{createQuestion}" />
+      </Clicked>
+    </WhileTrue>
+    <WhileFalse Value="{enabledButton}">
+      <Change createButton.Opacity="0.3" />
+    </WhileFalse>
+  </PurpleButton>
 </DockPanel>

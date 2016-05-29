@@ -7,7 +7,7 @@
 
   <StackPanel Alignment="Center" Padding="10">
     <Text Font="Regular" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="#FFF" Margin="0,0,0,5" Alignment="Center" Value="Thank you for sharing your knowledge!" />
-    <Text Font="Regular" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="#FFF" Margin="0,0,0,40" Alignment="Center" Value="Please select the subjects you're interested in:" />
+    <Text Font="Regular" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="#FFF" Margin="0,0,0,40" Alignment="Center" Value="Select the subjects you're interested in:" />
     <WrapPanel Margin="0,0,0,40">
       <Each Items="{tags}">
         <Tag Clicked="{toggleTag}" />
