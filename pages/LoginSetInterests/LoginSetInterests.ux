@@ -5,22 +5,15 @@
   </LinearGradient>
   <JavaScript File="LoginSetInterests.js" />
 
-  <UserEvent Name="TagToggle" />
-  <OnUserEvent Name="TagToggle" Handler="{toggledTag}" />
-  
   <StackPanel Alignment="Center" Padding="10">
     <Text Font="Regular" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="#FFF" Margin="0,0,0,5" Alignment="Center" Value="Thank you for sharing your knowledge!" />
     <Text Font="Regular" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="#FFF" Margin="0,0,0,40" Alignment="Center" Value="Please select the subjects you're interested in:" />
     <WrapPanel Margin="0,0,0,40">
-      <Tag Text="Food" />
-      <Tag Text="Math" />
-      <Tag Text="Japan" />
-      <Tag Text="Health" />
-      <Tag Text="Beauty" />
-      <Tag Text="Cocktail" />
-      <Tag Text="Tokyo" />
+      <Each Items="{tags}">
+        <Tag Clicked="{toggleTag}" />
+      </Each>
     </WrapPanel>
-    <!-- <Autocomplete Margin="0,0,0,40" /> -->
+    <Autocomplete Margin="0,0,0,40" />
     <PurpleButton Text="{buttonText}" Clicked="{selectedInterests}" />
   </StackPanel>
 </Panel>

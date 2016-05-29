@@ -1,12 +1,9 @@
 var Observable = require("FuseJS/Observable"),
-    tags = [
-      "Cooking",
-      "Physics",
-      "Fitness"
-    ];
+    name = Observable('');
 
 module.exports = {
-    valueChanged: function(args) {
-      console.log(args.value);
-    }
+  name: name,
+  valueChanged: function(args) {
+    console.log(args.value);
+  }
 };

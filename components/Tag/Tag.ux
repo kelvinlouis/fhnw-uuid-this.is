@@ -1,25 +1,10 @@
 <Rectangle ux:Class="Tag" Fill="#CAC4F2" Margin="3" Alignment="Center" CornerRadius="10">
-  <JavaScript File="Tag.js" />
-
-  <string ux:Property="Text" />
   <StackPanel Padding="10,5,10,5" Orientation="Horizontal">
     <Text>#</Text>
-    <Text Value="{Property this.Text}" />
+    <Text Value="{name}"></Text>
   </StackPanel>
+
   <WhileTrue Value="{selected}">
     <Change this.Fill="#FFF" />
-    <RaiseUserEvent Name="TagToggle">
-      <UserEventArg Name="name" StringValue="{Property this.Text}" />
-      <UserEventArg Name="selected" BoolValue="true" />
-    </RaiseUserEvent>
   </WhileTrue>
-  <WhileFalse Value="{selected}">
-    <RaiseUserEvent Name="TagToggle">
-      <UserEventArg Name="name" StringValue="{Property this.Text}" />
-      <UserEventArg Name="selected" BoolValue="false" />
-    </RaiseUserEvent>
-  </WhileFalse>
-  <Clicked>
-    <Callback Handler="{selectedTag}" />
-  </Clicked>
 </Rectangle>

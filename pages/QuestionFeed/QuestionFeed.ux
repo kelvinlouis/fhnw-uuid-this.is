@@ -1,7 +1,7 @@
 <DockPanel ux:Class="QuestionFeed">
-  <StackPanel Dock="Top" Orientation="Horizontal" Padding="10" Background="#927B9E">
+  <StackPanel Dock="Top" Orientation="Horizontal" Padding="10" MinHeight="55" Background="#927B9E">
     <Each Items="{tags}">
-      <Tag Text="{name}" />
+      <Tag Clicked="{removeTag}" />
     </Each>
   </StackPanel>
 

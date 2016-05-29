@@ -119,6 +119,12 @@ module.exports = {
     questions.remove(activeQuestion.value);
 
     goBack();
+  },
+
+  removeTag: function(e) {
+    Globl.tags.removeWhere(function(tag) {
+      return tag.name === e.data.name;
+    });
   }
 };
 

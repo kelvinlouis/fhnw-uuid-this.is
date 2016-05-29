@@ -1,11 +1,12 @@
-<Panel ux:Class="Toast">
-  <Rectangle ux:Name="Toast" Fill="#333" Opacity="0.5" Width="250" Height="50" CornerRadius="5" Alignment="TopRight" Margin="0,0,0,-250">
-    <StackPanel Alignment="Center">
-        <Image Alignment="Left"></Image>
-        <Text TextColor="#FFF" Value="{toastText}"/>
-    </StackPanel>
+<Panel ux:Class="Toast" ux:Name="Toast" Margin="0,0,0,-250">
+  <StackPanel Alignment="Center">
+    <Text TextColor="#FFF" Value="{toastText}"/>
+  </StackPanel>
+
+  <Rectangle Fill="#000" Opacity="0.5" Width="250" Height="50" CornerRadius="5" Alignment="TopRight">
     <DropShadow Angle="135" Distance="5" Size="0.5" Spread=".5"/>
   </Rectangle>
+  
   <WhileTrue Value="{toastTrue}">
     <Change Toast.Margin="0,0,0,20" Duration=".2" DurationBack=".2"/>
   </WhileTrue>
