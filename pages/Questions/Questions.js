@@ -1,6 +1,7 @@
 var Observable = require('FuseJS/Observable'),
     bundle = require('FuseJS/Bundle'),
-
+    Globl = require('Globl'),
+    
     jsonData = JSON.parse(bundle.readSync('data.json')),
     pages = Observable.apply(null, jsonData.pages),
     questions = Observable.apply(null, jsonData.questions),
@@ -26,6 +27,7 @@ module.exports = {
   myAnswers: myAnswers,
   activeQuestion: activeQuestion,
   isMyQuestion: isMyQuestion,
+  tags: Globl.tags,
 
   activePageHandle: activePage.map(function(x) {
     return x.handle;

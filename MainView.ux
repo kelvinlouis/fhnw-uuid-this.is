@@ -1,5 +1,9 @@
 <App Theme="Basic" Background="#eee">
   <JavaScript File="MainView.js" />
+
+  <!-- Hack to share data globally -->
+  <JavaScript File="Globl.js" ux:Global="Globl" />
+
   <Font File="Assets/Fonts/fontawesome-webfont.ttf" ux:Global="fa" />
   <Font File="Assets/Fonts/RobotoCondensed-Bold.ttf" ux:Global="Bold" />
   <Font File="Assets/Fonts/RobotoCondensed-Regular.ttf" ux:Global="Regular" />

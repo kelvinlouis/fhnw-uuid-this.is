@@ -1,8 +1,8 @@
 <DockPanel ux:Class="QuestionFeed">
   <StackPanel Dock="Top" Orientation="Horizontal" Padding="10" Background="#927B9E">
-    <Tag Text="Food" />
-    <Tag Text="Japan" />
-    <Tag Text="Travel" />
+    <Each Items="{tags}">
+      <Tag Text="{name}" />
+    </Each>
   </StackPanel>
 
   <ScrollView>
