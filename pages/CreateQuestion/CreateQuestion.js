@@ -2,6 +2,7 @@ var Observable = require('FuseJS/Observable'),
     title = Observable(''),
     desc = Observable(''),
     enabledButton = Observable(false),
+    descriptionActive = Observable(false),
 
     titleCounter = title.map(function(text) {
       if (text.length > 0) {
@@ -22,5 +23,15 @@ module.exports = {
   desc: desc,
   titleCounter: titleCounter,
   descCounter: descCounter,
-  enabledButton: enabledButton
+  enabledButton: enabledButton,
+  descriptionActive: descriptionActive,
+  titleClicked: function() {
+    descriptionActive.value = false;
+  },
+  descriptionClicked: function() {
+    descriptionActive.value = true;
+  },
+  descriptionBack: function() {
+    descriptionActive.value = false;
+  }
 };

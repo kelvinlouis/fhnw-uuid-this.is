@@ -2,7 +2,7 @@
     <string ux:Key="Title" ux:Value="Question"/>
     <Text ux:Class="T" TextColor="LightGray" Alignment="CenterLeft" />
     <DockPanel>
-      <ChatBox Dock="Bottom">
+      <ChatBox ux:Name="chatBox" Dock="Bottom">
         <Clicked>
           <BringIntoView TargetNode="bottomPlaceholder" Delay="0.2" />
         </Clicked>
@@ -10,6 +10,10 @@
           <BringIntoView TargetNode="bottomPlaceholder" Delay="0.2" />
         </Tapped>
       </ChatBox>
+
+      <WhileTrue Value="{activeQuestion.closed}">
+        <Change chatBox.Visibility="Collapsed" />
+      </WhileTrue>
 
       <Panel Color="White">
         <ScrollView ux:Name="scrollView">

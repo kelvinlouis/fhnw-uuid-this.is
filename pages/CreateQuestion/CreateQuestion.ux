@@ -7,7 +7,7 @@
     <StackPanel>
       <Section>
         <TextCounter Value="{titleCounter}" />
-        <TextInput Value="{title}" Height="60" IsMultiline="true" PlaceholderText="Enter Your Question" PlaceholderColor="#CCC" />
+        <TextInput Value="{title}" Height="60" IsMultiline="true" PlaceholderText="Enter Your Question" PlaceholderColor="#CCC" Clicked="{titleClicked}" />
       </Section>
 
       <Section ux:Name="imagePlaceholder" Visibility="Visible">
@@ -43,12 +43,11 @@
             <Set uploadedImage.Visibility="Collapsed" />
           </Clicked>
         </Image>
-
       </Section>
 
       <Section>
         <TextCounter Value="{descCounter}" />
-        <TextInput Height="80" Value="{desc}" IsMultiline="true" PlaceholderText="Description (optional)" PlaceholderColor="#CCC" />
+        <TextInput Height="80" Value="{desc}" IsMultiline="true" PlaceholderText="Description (optional)" PlaceholderColor="#CCC" Clicked="{descriptionClicked}" />
       </Section>
     </StackPanel>
   </ScrollView>
@@ -62,4 +61,13 @@
       <Change createButton.Opacity="0.3" />
     </WhileFalse>
   </PurpleButton>
+  
+  <WhileTrue Value="{descriptionActive}">
+    <WhileKeyboardVisible>
+      <Move Y="-1" RelativeTo="Keyboard" />
+    </WhileKeyboardVisible>
+    <OnBackButton>
+      <Callback Handler="{descriptionBack}" />
+    </OnBackButton>
+  </WhileTrue>
 </DockPanel>

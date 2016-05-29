@@ -1,21 +1,24 @@
 <DockPanel ux:Class="QuestionFeed">
-  <StackPanel Dock="Top" Padding="10" MinHeight="55" Background="#927B9E" ItemSpacing="10">
-    <WrapPanel>
-      <Each Items="{tags}">
-        <Tag Clicked="{removeTag}" />
-      </Each>
-    </WrapPanel>
-    <Autocomplete />
-  </StackPanel>
-
+  <Panel Dock="Top" Width="100%" Height="0" /> 
   <ScrollView>
-    <StackPanel Padding="10,10,10,10" ItemSpacing="15">
-      <Each Items="{questions}">
-        <QuestionItem />
-      </Each>
+    <StackPanel>
+      <StackPanel Padding="10" MinHeight="55" Background="#927B9E" ItemSpacing="10">
+        <WrapPanel>
+          <Each Items="{tags}">
+            <Tag Clicked="{removeTag}" />
+          </Each>
+        </WrapPanel>
+        <Autocomplete />
+      </StackPanel>
+  
+      <StackPanel Padding="10,10,10,10" ItemSpacing="15">
+        <Each Items="{questions}">
+          <QuestionItem />
+        </Each>
+      </StackPanel>
+      <WhileEmpty Items="{questions}">
+        <Text TextWrapping="Wrap" Alignment="Center">There are no questions to show. Please adjust your tags, by adding new ones or removing them</Text>
+      </WhileEmpty>
     </StackPanel>
   </ScrollView>
-  <WhileEmpty Items="{questions}">
-    <Text TextWrapping="Wrap" Alignment="Center">There are no questions to show. Please adjust your tags, by adding new ones or removing them</Text>
-  </WhileEmpty>
 </DockPanel>

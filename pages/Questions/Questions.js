@@ -42,7 +42,7 @@ module.exports = {
     previousPage = activePage.value;
     activePage.value = pages.getAt(1);
 
-    isMyQuestion.value = e.data.myQuestion || false;
+    isMyQuestion.value = (e.data.myQuestion && !e.data.closed.value ) || false;
   },
 
   goBack: goBack,
@@ -83,8 +83,6 @@ module.exports = {
         q = new Question(title, desc, 'image4', 'Sam', 'Now');
 
     questions.insertAt(0, q);
-
-    isMyQuestion.value = true;
 
     myQuestions.insertAt(0, q);
 
