@@ -60,7 +60,7 @@
     </StackPanel>
 
     <DirectNavigation ux:Name="nav" Active="{activePageHandle}" />
-
+    
     <Page ux:Name="feed" Background="#FFF">
       <QuestionFeed />
 
@@ -71,27 +71,6 @@
       <EnteringAnimation>
         <DebugAction Message="feed" />
         <Move X="1" RelativeTo="ParentSize" />
-      </EnteringAnimation>
-      <ExitingAnimation>
-        <Move X="-1" RelativeTo="ParentSize" />
-      </ExitingAnimation>
-    </Page>
-  
-    <Page ux:Name="question" Background="#FFF">
-      <Question />
-      <WhileActive>
-        <Change backButton.Visibility="Visible"/>
-        <Change addButton.Visibility="Collapsed"/>
-        <Change settingsButton.Visibility="Collapsed"/>
-        <Change tabBar.Visibility="Collapsed" />
-
-        <WhileTrue Value="{isMyQuestion}">
-          <Change closeButton.Visibility="Visible"/>
-        </WhileTrue>
-      </WhileActive>
-      <EnteringAnimation>
-        <Move X="1" RelativeTo="ParentSize" />
-        <DebugAction Message="question" />
       </EnteringAnimation>
       <ExitingAnimation>
         <Move X="-1" RelativeTo="ParentSize" />
@@ -130,6 +109,27 @@
       </ExitingAnimation>
     </Page>
 
+    <Page ux:Name="question" Background="#FFF">
+      <Question />
+      <WhileActive>
+        <Change backButton.Visibility="Visible"/>
+        <Change addButton.Visibility="Collapsed"/>
+        <Change settingsButton.Visibility="Collapsed"/>
+        <Change tabBar.Visibility="Collapsed" />
+
+        <WhileTrue Value="{isMyQuestion}">
+          <Change closeButton.Visibility="Visible"/>
+        </WhileTrue>
+      </WhileActive>
+      <EnteringAnimation>
+        <Move X="1" RelativeTo="ParentSize" />
+        <DebugAction Message="question" />
+      </EnteringAnimation>
+      <ExitingAnimation>
+        <Move X="-1" RelativeTo="ParentSize" />
+      </ExitingAnimation>
+    </Page>
+
     <Page ux:Name="createQuestion" Background="#FFF">
       <CreateQuestion />
       
@@ -162,10 +162,6 @@
       <ExitingAnimation>
         <Move X="-1" RelativeTo="ParentSize" />
       </ExitingAnimation>
-
-      <OnBackButton>
-        <Callback Handler="{goBack}" />
-      </OnBackButton>
     </Page>
   </DockPanel>
 </Panel>

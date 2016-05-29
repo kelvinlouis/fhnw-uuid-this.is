@@ -20,7 +20,7 @@
 
       <iOS.StatusBarConfig Style="Light" />
 
-      <PageControl Active="{activePage}">
+      <PageControl Active="{activePage}" Interaction="None">
         <!-- <Page ux:Name="Intro" Background="#FFF">
           <Intro />
         </Page> -->

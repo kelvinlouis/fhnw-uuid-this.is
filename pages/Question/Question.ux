@@ -4,15 +4,15 @@
     <DockPanel>
       <ChatBox Dock="Bottom">
         <Clicked>
-          <BringIntoView TargetNode="bottomPlaceholder" />
+          <BringIntoView TargetNode="bottomPlaceholder" Delay="0.2" />
         </Clicked>
         <Tapped>
-          <BringIntoView TargetNode="bottomPlaceholder" />
+          <BringIntoView TargetNode="bottomPlaceholder" Delay="0.2" />
         </Tapped>
       </ChatBox>
 
       <Panel Color="White">
-        <ScrollView>
+        <ScrollView ux:Name="scrollView">
           <StackPanel>
             <Panel Height="430" />
             <StackPanel>
@@ -61,8 +61,11 @@
           </Panel>
         </Grid>
       </Panel>
+      <WhileKeyboardVisible>
+        <Move Y="-1" RelativeTo="Keyboard" />
+      </WhileKeyboardVisible>
     </DockPanel>
-    <OnBackButton>
-      <Callback Handler="{goBack}" />
-    </OnBackButton>
+    <ActivatingAnimation>
+       <Set Target="scrollView.ScrollPosition" Value="0" />
+    </ActivatingAnimation>
   </DockPanel>

@@ -4,7 +4,6 @@ var Observable = require('FuseJS/Observable'),
     tags = Observable(
       { name: 'Food', selected: Observable(false) },
       { name: 'Math', selected: Observable(false) },
-      { name: 'Japan', selected: Observable(false) },
       { name: 'Health', selected: Observable(false) },
       { name: 'Beauty', selected: Observable(false) },
       { name: 'Cocktail', selected: Observable(false) }
@@ -45,6 +44,12 @@ module.exports = {
       if (!exists) {
         tags.add(tag);
         Globl.tags.add({ name: e.data.name });
+      }
+
+      if (Globl.tags.length > 0) {
+        buttonText.value = 'Show me questions';
+      } else {
+        buttonText.value = 'Skip';
       }
     }
 };

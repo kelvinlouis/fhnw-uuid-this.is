@@ -13,8 +13,7 @@ var Observable = require("FuseJS/Observable"),
       { name: 'Tokyo' },
       { name: 'Noodles' },
       { name: 'Cooking' },
-      { name: 'Asian' },
-      { name: 'Traveling' }
+      { name: 'Asian' }
     );
 
 module.exports = {
