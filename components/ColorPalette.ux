@@ -1,11 +1,23 @@
 <Panel ux:Class="ColorPalette">
-  <float4 ux:Global="LightGray"       ux:Value="#FDFDFD"   />
-  <float4 ux:Global="LightGrayFaded"  ux:Value="#FDFDFD88" />
-  <float4 ux:Global="TicketPurple"    ux:Value="#3D206A"   />
-  <float4 ux:Global="FlagColor"       ux:Value="#973067"   />
-  <float4 ux:Global="MediumGray"      ux:Value="#A5A3A8"   />
-  <float4 ux:Global="FadedMediumGray" ux:Value="#A5A3A877" />
-  <float4 ux:Global="TicketRed"       ux:Value="#CC2421"   />
-  <float4 ux:Global="IndicatorColor"  ux:Value="#A34379"   />
-  <SolidColor ux:Global="FlagColorBrush" Color="FlagColor" />
+  <float4 ux:Global="DP900"           ux:Value="#311B92"   />
+  <float4 ux:Global="DP500"           ux:Value="#673AB7"   />
+  <float4 ux:Global="DP800"           ux:Value="#4527A0"   />
+  <float4 ux:Global="DP700"           ux:Value="#512DA8"   />
+  <float4 ux:Global="DP600"           ux:Value="#5E35B1"   />
+  <float4 ux:Global="DP400"           ux:Value="#7E57C2"   />
+  <float4 ux:Global="DP300"           ux:Value="#9575CD"   />
+  <float4 ux:Global="DP200"           ux:Value="#B39DDB"   />
+  <float4 ux:Global="DP100"           ux:Value="#D1C4E9"   />
+  <float4 ux:Global="DP50"            ux:Value="#EDE7F6"   />
+  <float4 ux:Global="DPA100"          ux:Value="#B388FF"   />
+  <float4 ux:Global="G900"            ux:Value="#1B5E20"   />
+  <float4 ux:Global="G500"            ux:Value="#4CAF50"   />
+  <float4 ux:Global="BrightWhite"     ux:Value="#FFFFFF"   />
+  <float4 ux:Global="LightGrey"       ux:Value="#FDFDFD"   />
+  <float4 ux:Global="MediumGrey"      ux:Value="#CCCCCC"   />
+  <float4 ux:Global="Grey"            ux:Value="#666666"   />
+  <float4 ux:Global="DarkBlack"       ux:Value="#000000"   />
+  <float4 ux:Global="FacebookBlue"    ux:Value="#3b5998"   />
+  <float4 ux:Global="TwitterBlue"     ux:Value="#4099FF"   />
+
 </Panel>

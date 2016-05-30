@@ -2,11 +2,12 @@ var Observable = require('FuseJS/Observable'),
     buttonText = Observable('Skip'),
     Globl = require('Globl'),
     tags = Observable(
-      { name: 'Food', selected: Observable(false) },
-      { name: 'Math', selected: Observable(false) },
-      { name: 'Health', selected: Observable(false) },
       { name: 'Beauty', selected: Observable(false) },
-      { name: 'Cocktail', selected: Observable(false) }
+      { name: 'Cocktail', selected: Observable(false) },
+      { name: 'Cooking', selected: Observable(false) },
+      { name: 'Food', selected: Observable(false) },
+      { name: 'Health', selected: Observable(false) },
+      { name: 'Math', selected: Observable(false) }
     );
 
 module.exports = {

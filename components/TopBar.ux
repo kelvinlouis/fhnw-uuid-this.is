@@ -1,15 +1,15 @@
-<Grid ux:Class="TopBar" Dock="Top" Color="TicketPurple" Padding="10,10,10,0" Rows="1*,1*">
+<Grid ux:Class="TopBar" Dock="Top" Color="DP900" Padding="10,10,10,0" Rows="1*,1*">
   <Grid Columns="40,1*,30" Alignment="Top" Height="60">
-    <IconChevronLeft FontSize="20" Opacity="0" TextColor="#FFF" Alignment="VerticalCenter">
+    <IconChevronLeft FontSize="20" Opacity="0" TextColor="BrightWhite" Alignment="VerticalCenter">
       <Clicked>
         <Callback Handler="{goBack}" />
       </Clicked>
     </IconChevronLeft>
-    <Text Value="{activePageTitle}" FontSize="20" TextColor="LightGray" Alignment="VerticalCenter"/>
+    <Text Value="{activePageTitle}" FontSize="20" TextColor="LightGrey" Alignment="VerticalCenter"/>
     <Grid Rows="7,7,7" Alignment="VerticalCenter">
-      <Circle Color="LightGray" Width="4" Height="4"/>
-      <Circle Color="LightGray" Width="4" Height="4"/>
-      <Circle Color="LightGray" Width="4" Height="4"/>
+      <Circle Color="LightGrey" Width="4" Height="4"/>
+      <Circle Color="LightGrey" Width="4" Height="4"/>
+      <Circle Color="LightGrey" Width="4" Height="4"/>
     </Grid>
   </Grid>
 </Grid>

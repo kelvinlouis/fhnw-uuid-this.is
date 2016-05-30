@@ -4,6 +4,10 @@
   <FileImageSource ux:Key="image2" File="../../Assets/Questions/ramen2.jpg" />
   <FileImageSource ux:Key="image3" File="../../Assets/Questions/japan.jpg" />
   <FileImageSource ux:Key="image4" File="../../Assets/Questions/mochi.jpg" />
+  <FileImageSource ux:Key="image5" File="../../Assets/Questions/japan2.jpg" />
+  <FileImageSource ux:Key="image6" File="../../Assets/Questions/sakura.jpg" />
+  <FileImageSource ux:Key="image7" File="../../Assets/Questions/math.png" />
+  <FileImageSource ux:Key="image8" File="../../Assets/Questions/cocktail.jpg" />
 
   <FileImageSource ux:Key="author1" File="../../Assets/Authors/author1.jpg" />
   <FileImageSource ux:Key="author2" File="../../Assets/Authors/author2.jpg" />
@@ -12,15 +16,15 @@
   
   <!-- Hack: Using Paddings to increase clickable area. Alignment=Center reduces available area ... -->
   <DockPanel>
-    <StackPanel Dock="Top" Color="TicketPurple" Padding="10,10,10,0">
+    <StackPanel Dock="Top" Color="DP900" Padding="10,10,10,0">
       <Grid Rows="1*,1*">
         <Grid Columns="40,1*,40,40" Alignment="Top" Height="60">
-          <IconChevronLeft ux:Name="backButton" FontSize="20" Padding="0,17,0,0" Visibility="Collapsed" TextColor="#FFF" Clicked="{goBack}" />
-          <Text Value="{activePageTitle}" FontSize="20" Padding="0,15,0,0" TextColor="LightGray" />
-          <IconPlusCircle ux:Name="addButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Visibility="Visible" TextColor="#FFF" Clicked="{goToCreateQuestion}" />
+          <IconChevronLeft ux:Name="backButton" FontSize="20" Padding="0,17,0,0" Visibility="Collapsed" TextColor="BrightWhite" Clicked="{goBack}" />
+          <Text Value="{activePageTitle}" FontSize="20" Padding="0,15,0,0" TextColor="LightGrey" />
+          <IconPlusCircle ux:Name="addButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Visibility="Visible" TextColor="BrightWhite" Clicked="{goToCreateQuestion}" />
           <Panel>
-            <IconDots ux:Name="settingsButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Visibility="Visible" TextColor="#FFF" Clicked="{goToSettings}" />
-            <IconCheckCircle ux:Name="closeButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Visibility="Collapsed" TextColor="#FFF" Clicked="{closeQuestion}" />
+            <IconDots ux:Name="settingsButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Visibility="Visible" TextColor="BrightWhite" Clicked="{goToSettings}" />
+            <IconCheckCircle ux:Name="closeButton" FontSize="20" Padding="0,15,0,0" TextAlignment="Center" Visibility="Collapsed" TextColor="BrightWhite" Clicked="{closeQuestion}" />
           </Panel>
         </Grid>
       </Grid>
@@ -28,7 +32,7 @@
         <GridLayout ColumnCount="3" Rows="1*"/>
         <Panel ux:Name="feedTab">
           <Placeholder>
-            <Rectangle ux:Name="indicator" Alignment="Bottom" Height="4" Fill="#FFF">
+            <Rectangle ux:Name="indicator" Alignment="Bottom" Height="4" Color="BrightWhite">
               <LayoutAnimation>
                 <Move RelativeTo="LayoutChange" X="1" Duration="0.4" Easing="BackIn"/>
               </LayoutAnimation>
@@ -61,7 +65,7 @@
 
     <DirectNavigation ux:Name="nav" Active="{activePageHandle}" />
     
-    <Page ux:Name="feed" Background="#FFF">
+    <Page ux:Name="feed" Color="BrightWhite">
       <QuestionFeed />
 
       <WhileActive>
@@ -77,7 +81,7 @@
       </ExitingAnimation>
     </Page>
 
-    <Page ux:Name="myQuestions" Background="#FFF">
+    <Page ux:Name="myQuestions" Color="BrightWhite">
       <MyQuestions />
 
       <WhileActive>
@@ -93,7 +97,7 @@
       </ExitingAnimation>
     </Page>
 
-    <Page ux:Name="myAnswers" Background="#FFF">
+    <Page ux:Name="myAnswers" Color="BrightWhite">
       <MyAnswers />
 
       <WhileActive>
@@ -109,7 +113,7 @@
       </ExitingAnimation>
     </Page>
 
-    <Page ux:Name="question" Background="#FFF">
+    <Page ux:Name="question" Color="BrightWhite">
       <Question />
       <WhileActive>
         <Change backButton.Visibility="Visible"/>
@@ -130,7 +134,7 @@
       </ExitingAnimation>
     </Page>
 
-    <Page ux:Name="createQuestion" Background="#FFF">
+    <Page ux:Name="createQuestion" Color="BrightWhite">
       <CreateQuestion />
       
       <WhileActive>
@@ -147,7 +151,7 @@
       </ExitingAnimation>
     </Page>
 
-    <Page ux:Name="settings" Background="#FFF">
+    <Page ux:Name="settings" Color="BrightWhite">
       <Text Alignment="Center">todo: Settings</Text>
       
       <WhileActive>

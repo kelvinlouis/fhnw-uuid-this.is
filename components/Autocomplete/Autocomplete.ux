@@ -2,16 +2,17 @@
   <JavaScript File="Autocomplete.js" />
   
   <DockPanel>
-    <TextInput ux:Name="input" ValueChanged="{valueChanged}" Value="{text}" PlaceholderText="Enter a topic without # (optional)" TextColor="#FFF" PlaceholderColor="#FFF" />
+    <TextInput ux:Name="input" ValueChanged="{valueChanged}" Value="{text}" PlaceholderText="Enter a topic without # (optional)" TextColor="BrightWhite" PlaceholderColor="BrightWhite" />
 
-    <IconTimesCircle ux:Name="clearButton" Dock="Right" Alignment="Center" TextColor="#FFF" Margin="0,-10,0,0" FontSize="20" Opacity="0">
+    <Panel ux:Name="clearButton" Dock="Right" Width="35" Height="35" Opacity="0">
+      <IconTimesCircle Padding="5,20,0,0" TextColor="BrightWhite" Margin="0,-10,0,0" FontSize="20" />
       <WhileTrue Value="{clearEnabled}">
         <Change clearButton.Opacity="1" Duration="0.3" />
         <Clicked>
           <Callback Handler="{clear}" />
         </Clicked>
       </WhileTrue>
-    </IconTimesCircle>
+    </Panel>
   </DockPanel>
   
   <ScrollView>
@@ -19,9 +20,10 @@
       <Each Items="{results}">
         <Panel Height="45">
           <Text Value="{name}" Alignment="VerticalCenter" Padding="10,0,0,0" />
-          <Rectangle Width="100%" Height="100%" Fill="#FFF" Opacity="0.5" />
+          <Rectangle Width="100%" Height="100%" Color="BrightWhite" Opacity="0.5" />
           <Clicked>
             <Callback Handler="{addTag}" />
+            <Callback Handler="{clear}" />
             <!-- <GiveFocus Target="input" /> -->
           </Clicked>
         </Panel>

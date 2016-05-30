@@ -1,9 +1,9 @@
 <Panel ux:Class="Toast" ux:Name="Toast" Margin="0,0,0,-250">
   <StackPanel Alignment="Center">
-    <Text TextColor="#FFF" Value="{toastText}"/>
+    <Text TextColor="BrightWhite" Value="{toastText}"/>
   </StackPanel>
 
-  <Rectangle Fill="#000" Opacity="0.5" Width="250" Height="50" CornerRadius="5" Alignment="TopRight">
+  <Rectangle Color="DarkBlack" Opacity="0.5" Width="250" Height="50" CornerRadius="5" Alignment="TopRight">
     <DropShadow Angle="135" Distance="5" Size="0.5" Spread=".5"/>
   </Rectangle>
   

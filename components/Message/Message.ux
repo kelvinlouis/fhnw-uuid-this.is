@@ -1,5 +1,5 @@
 <Panel ux:Class="Message">
-  <Text ux:Class="DateTime" Alignment="VerticalCenter" FontSize="12" TextColor="#7a96b2" />
+  <Text ux:Class="DateTime" Alignment="VerticalCenter" FontSize="12" TextColor="Grey" />
   <Text ux:Class="Name" Alignment="VerticalCenter" FontSize="16">
     <Font File="../../Assets/Fonts/Roboto-Bold.ttf" />
   </Text>

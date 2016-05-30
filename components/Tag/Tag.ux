@@ -1,10 +1,10 @@
-<Rectangle ux:Class="Tag" Fill="#CAC4F2" Margin="3" Alignment="Center" CornerRadius="10">
+<Rectangle ux:Class="Tag" Color="DP200" Margin="3" Alignment="Center" CornerRadius="10">
   <StackPanel Padding="10,5,10,5" Orientation="Horizontal">
     <Text>#</Text>
     <Text Value="{name}"></Text>
   </StackPanel>
 
   <WhileTrue Value="{selected}">
-    <Change this.Fill="#FFF" />
+    <Change this.Color="DP50" />
   </WhileTrue>
 </Rectangle>

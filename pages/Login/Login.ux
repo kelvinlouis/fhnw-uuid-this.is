@@ -1,20 +1,20 @@
 <Panel ux:Class="Login" Padding="10">
   <LinearGradient>
-    <GradientStop Color="TicketPurple" Offset="0" />
-    <GradientStop Color="#D7C4CA" Offset="1" />
+    <GradientStop Color="DP900" Offset="0" />
+    <GradientStop Color="DP100" Offset="1" />
   </LinearGradient>
 
   <HierarchicalNavigation Active="choose" />
 
   <Page ux:Name="choose">
     <StackPanel Alignment="Center">
-      <Text Font="Regular" FontSize="64" TextColor="#FFF" Value="this.is" Alignment="Center" />
-      <Text Font="Regular" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="#FFF" Margin="0,20,0,80" Value="The place where you can ask questions in real time" Alignment="Center" />
+      <Text Font="Regular" FontSize="64" TextColor="BrightWhite" Value="this.is" Alignment="Center" />
+      <Text Font="Regular" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="BrightWhite" Margin="0,20,0,80" Value="The place where you can ask questions in real time" Alignment="Center" />
       <StackPanel ItemSpacing="10">
-        <LightButton Color="#3b5998">
+        <LightButton Color="FacebookBlue">
           <StackPanel Orientation="Horizontal" Alignment="Center">
-            <IconFacebook Margin="0,0,10,0" FontSize="18" TextColor="#FFF" />
-            <Text Value="Login with Facebook" FontSize="18" TextColor="#FFF" />
+            <IconFacebook Margin="0,0,10,0" FontSize="18" TextColor="BrightWhite" />
+            <Text Value="Login with Facebook" FontSize="18" TextColor="BrightWhite" />
           </StackPanel>
           <Clicked>
             <Callback Handler="{completeLogin}" />
@@ -22,10 +22,10 @@
           </Clicked>  
         </LightButton>
 
-        <LightButton Color="#4099FF">
+        <LightButton Color="TwitterBlue">
           <StackPanel Orientation="Horizontal" Alignment="Center">
-            <IconTwitter Margin="0,0,10,0" FontSize="18" TextColor="#FFF" />
-            <Text Value="Login with Twitter" FontSize="18" TextColor="#FFF" />
+            <IconTwitter Margin="0,0,10,0" FontSize="18" TextColor="BrightWhite" />
+            <Text Value="Login with Twitter" FontSize="18" TextColor="BrightWhite" />
           </StackPanel>
           <Clicked>
             <Callback Handler="{completeLogin}" />
@@ -34,7 +34,7 @@
         </LightButton>
       </StackPanel>
 
-      <Text TextColor="#FFF" Alignment="Center" Margin="0,20,0,0">by logging in you accept the TOC</Text>
+      <Text TextColor="BrightWhite" Alignment="Center" Margin="0,20,0,0">by logging in you accept the TOC</Text>
     </StackPanel>
   </Page>
 

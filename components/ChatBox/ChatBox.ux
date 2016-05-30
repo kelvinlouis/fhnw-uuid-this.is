@@ -1,13 +1,13 @@
 <Panel ux:Class="ChatBox">
   <JavaScript File="Chatbox.js" />
 
-  <Rectangle Width="100%" Height="60" Fill="#FFF">
+  <Rectangle Width="100%" Height="60" Color="BrightWhite">
     <DropShadow Angle="0" Distance="0" Size="5" />
     <DockPanel>
-      <IconSmile Dock="Left" FontSize="24" TextColor="Gray" Alignment="VerticalCenter" Margin="10,0,10,0" />
-      <TextInput Alignment="VerticalCenter" IsMultiline="true" Height="50" PlaceholderText="Enter Answer" Value="{message}" ValueChanged="{messageChanged}" PlaceholderColor="#CCC" />
-      <Circle ux:Name="sendButton" Dock="Right" Width="30" Height="30" Fill="#3D206A" Margin="10,0,10,0">
-        <IconSend FontSize="14" TextColor="#FFF" Alignment="Center" />
+      <IconSmile Dock="Left" FontSize="24" TextColor="Grey" Alignment="VerticalCenter" Margin="10,0,10,0" />
+      <TextInput Alignment="VerticalCenter" IsMultiline="true" Height="50" PlaceholderText="Enter Answer" Value="{message}" ValueChanged="{messageChanged}" PlaceholderColor="MediumGrey" />
+      <Circle ux:Name="sendButton" Dock="Right" Width="30" Height="30" Color="DP900" Margin="10,0,10,0">
+        <IconSend FontSize="14" TextColor="BrightWhite" Alignment="Center" />
         <WhileFalse Value="{sendEnabled}">
           <Change sendButton.Opacity="0.3" Duration="0.5" />
         </WhileFalse>

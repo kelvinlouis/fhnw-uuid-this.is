@@ -14,7 +14,7 @@
   <Panel Height="100%" Width="100%">
     <Toast Alignment="BottomCenter" />
     <DockPanel>
-      <Panel Dock="Top" Margin="0,-1,0,0" Color="TicketPurple">
+      <Panel Dock="Top" Margin="0,-1,0,0" Color="DP900">
         <StatusBarBackground/>
       </Panel>
 

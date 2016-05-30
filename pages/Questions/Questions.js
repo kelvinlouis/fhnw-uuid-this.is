@@ -5,6 +5,7 @@ var Observable = require('FuseJS/Observable'),
     jsonData = JSON.parse(bundle.readSync('data.json')),
     pages = Observable.apply(null, jsonData.pages),
     questions = Observable.apply(null, jsonData.questions),
+    results = Observable(),
 
     myQuestions = Observable(),
     myAnswers = Observable(),
@@ -18,10 +19,42 @@ questions.forEach(function(x) {
   x.answers = Observable.apply(null, x.answers);
   x.answerCount = Observable(x.answerCount);
   x.closed = Observable(x.closed);
+
+  results.add(x);
 });
+
+ function goBack() {
+  activePage.value = previousPage;
+  previousPage = null;
+}
+
+function updateResults() {
+  var tags = Globl.tags,
+      addAll = false;
+
+  results.clear();
+
+  if (tags.length === 0) addAll = true;
+
+  questions.forEach(function(q) {
+    var exists = false;
+
+    if ( (q.myQuestion && !q.closed) || addAll) {
+      results.add(q);
+      return;
+    }
+
+    tags.forEach(function(t) {
+      if (q.tags.indexOf(t.name) > -1) exists = true;
+    });
+
+    if ( exists ) results.add(q);
+  });
+}
 
 module.exports = {
   questions: questions,
+  results: results,
   activePage: activePage,
   myQuestions: myQuestions,
   myAnswers: myAnswers,
@@ -90,6 +123,7 @@ module.exports = {
     e.data.desc.value = '';
 
     activePage.value = pages.getAt(0);
+    updateResults();
   },
 
   enteredMessage: function(e) {
@@ -123,6 +157,8 @@ module.exports = {
     Globl.tags.removeWhere(function(tag) {
       return tag.name === e.data.name;
     });
+
+    updateResults();
   },
 
   addTag: function(e) {
@@ -136,7 +172,10 @@ module.exports = {
     if (!exists) {
       Globl.tags.add({ name: e.data.name });
     }
+    
+    updateResults();
   }
+
 };
 
 function Question(title, description, image, author, time) {
@@ -161,9 +200,4 @@ function Question(title, description, image, author, time) {
 
   this.answerCount = Observable(this.answers.length);
   this.myQuestion = true;
-}
-
- function goBack() {
-  activePage.value = previousPage;
-  previousPage = null;
 }

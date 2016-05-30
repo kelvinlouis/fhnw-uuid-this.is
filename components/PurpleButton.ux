@@ -1,4 +1,4 @@
-<Rectangle ux:Class="PurpleButton" Color="#3D206A" Height="50" CornerRadius="5">
+<Rectangle ux:Class="PurpleButton" Color="DP800" Height="50" CornerRadius="5">
   <string ux:Property="Text" />
-  <Text TextColor="#FFF" Font="RobotoMedium" Value="{Property this.Text}" Alignment="Center" />
+  <Text TextColor="BrightWhite" Font="RobotoMedium" Value="{Property this.Text}" Alignment="Center" />
 </Rectangle>

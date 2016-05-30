@@ -1,15 +1,15 @@
 <Panel ux:Class="LoginSetInterests">
   <LinearGradient>
-    <GradientStop Color="TicketPurple" Offset="0" />
-    <GradientStop Color="#D7C4CA" Offset="1" />
+    <GradientStop Color="DP900" Offset="0" />
+    <GradientStop Color="DP100" Offset="1" />
   </LinearGradient>
   <JavaScript File="LoginSetInterests.js" />
 
   <ScrollView>
     <StackPanel Alignment="Center" Padding="10">
       <StackPanel>
-        <Text Font="Regular" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="#FFF" Margin="0,0,0,5" Alignment="Center" Value="Thank you for sharing your knowledge!" />
-        <Text Font="Regular" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="#FFF" Margin="0,0,0,40" Alignment="Center" Value="Select the subjects you're interested in:" />
+        <Text Font="Regular" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="BrightWhite" Margin="0,0,0,5" Alignment="Center" Value="Thank you for sharing your knowledge!" />
+        <Text Font="Regular" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="BrightWhite" Margin="0,0,0,40" Alignment="Center" Value="Select the subjects you're interested in:" />
         <WrapPanel Margin="0,0,0,40">
           <Each Items="{tags}">
             <Tag Clicked="{toggleTag}" />

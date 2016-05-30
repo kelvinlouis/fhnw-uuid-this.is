@@ -1,2 +1,2 @@
-<Rectangle ux:Class="LightButton" Color="#8B4D8C" Height="50" CornerRadius="5">
+<Rectangle ux:Class="LightButton" Color="DP200" Height="50" CornerRadius="5">
 </Rectangle>

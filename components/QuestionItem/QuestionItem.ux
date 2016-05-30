@@ -1,6 +1,6 @@
 <DockPanel ux:Class="QuestionItem" Clicked="{selectQuestion}">
   <!-- Hack to increase click area -->
-  <Rectangle Height="100%" Width="100%" Background="#FFF" Opacity="0"/>
+  <Rectangle Height="100%" Width="100%" Color="BrightWhite" Opacity="0"/>
   <Rectangle Height="60" Width="60" Dock="Right" Alignment="TopLeft" CornerRadius="5">
     <ImageFill Source="{DataToResource image}"/>
   </Rectangle>
@@ -9,13 +9,13 @@
     <Text TextWrapping="Wrap" Font="Regular" Value="{title}" FontSize="18" Margin="5,0,5,0" />
 
     <StackPanel Dock="Bottom" Orientation="Horizontal" Padding="5,5,0,0">
-      <IconCommentO FontSize="16" Alignment="Center" TextColor="#666" Margin="0,0,5,0" />
-      <Text Font="Light" TextWrapping="Wrap" Value="{answerCount}" FontSize="16" Alignment="Center" TextColor="#666" />
-      <Text Font="Light" Value="{time}" FontSize="16" Margin="20,0,0,0" TextColor="#666" />
-      <Text Font="Light" Value="{author}" FontSize="16" Margin="20,0,0,0" TextColor="#666" />
+      <IconCommentO FontSize="16" Alignment="Center" TextColor="Grey" Margin="0,0,5,0" />
+      <Text Font="Light" TextWrapping="Wrap" Value="{answerCount}" FontSize="16" Alignment="Center" TextColor="Grey" />
+      <Text Font="Light" Value="{time}" FontSize="16" Margin="20,0,0,0" TextColor="Grey" />
+      <Text Font="Light" Value="{author}" FontSize="16" Margin="20,0,0,0" TextColor="Grey" />
       <WhileTrue Value="{closed}">
         <IconCheckCircle FontSize="16" Alignment="Center" TextColor="Green" Margin="20,0,5,0" />
-        <Text Font="Light" Value="closed" FontSize="16" Margin="0,0,0,0" TextColor="Green" />
+        <Text Font="Light" Value="closed" FontSize="16" Margin="0,0,0,0" TextColor="G900" />
       </WhileTrue>
     </StackPanel>
   </StackPanel>

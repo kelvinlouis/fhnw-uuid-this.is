@@ -1,21 +1,21 @@
 <DockPanel ux:Class="CreateQuestion" Margin="10,10,10,10">
   <JavaScript File="CreateQuestion.js" />
-  <Text ux:Class="TextCounter" TextColor="#666" FontSize="12" Alignment="Right" Margin="0,0,0,-5" />
+  <Text ux:Class="TextCounter" TextColor="Grey" FontSize="12" Alignment="Right" Margin="0,0,0,-5" />
   <StackPanel ux:Class="Section" Margin="0,10,0,10" />
   
   <ScrollView>
     <StackPanel>
       <Section>
         <TextCounter Value="{titleCounter}" />
-        <TextInput Value="{title}" Height="60" IsMultiline="true" PlaceholderText="Enter Your Question" PlaceholderColor="#CCC" Clicked="{titleClicked}" />
+        <TextInput Value="{title}" Height="60" IsMultiline="true" PlaceholderText="Enter Your Question" PlaceholderColor="MediumGrey" Clicked="{titleClicked}" />
       </Section>
 
       <Section ux:Name="imagePlaceholder" Visibility="Visible">
-        <Rectangle Width="100%" Height="200" Fill="#3D206A">
+        <Rectangle Width="100%" Height="200" Color="DP900">
           <Halftone Spacing="1" />
           <WrapPanel Alignment="Center">
-            <IconPlusCircle Margin="0,0,5,0" TextColor="#FFF" /> 
-            <Text TextColor="#FFF">Add Picture (optional)</Text>
+            <IconPlusCircle Margin="0,0,5,0" TextColor="BrightWhite" /> 
+            <Text TextColor="BrightWhite">Add Picture (optional)</Text>
           </WrapPanel>
 
           <Clicked>
@@ -26,16 +26,16 @@
       </Section>
 
       <Section ux:Name="uploadedImage" Visibility="Collapsed">
-        <Circle Width="30" Height="30" Fill="#3D206A" Alignment="Right" Margin="0,0,0,-15">
-          <IconTimes FontSize="20" Alignment="Center" TextColor="#FFF" />
+        <Circle Width="30" Height="30" Color="DP900" Alignment="Right" Margin="0,0,0,-15">
+          <IconTimes FontSize="20" Alignment="Center" TextColor="BrightWhite" />
           <Clicked>
             <Set imagePlaceholder.Visibility="Visible" />
             <Set uploadedImage.Visibility="Collapsed" />
           </Clicked>
         </Circle>
         <!-- <WrapPanel Alignment="Right">
-          <Text TextColor="#666" FontSize="14" Value="Remove Photo" Margin="0,0,5,0" />
-          <IconTimesCircle TextColor="#3D206A" />
+          <Text TextColor="Grey" FontSize="14" Value="Remove Photo" Margin="0,0,5,0" />
+          <IconTimesCircle TextColor="DP900" />
         </WrapPanel> -->
         <Image File="../../Assets/Questions/mochi.jpg" Height="200" StretchMode="Fill">
           <Clicked>
@@ -47,7 +47,7 @@
 
       <Section>
         <TextCounter Value="{descCounter}" />
-        <TextInput Height="80" Value="{desc}" IsMultiline="true" PlaceholderText="Description (optional)" PlaceholderColor="#CCC" Clicked="{descriptionClicked}" />
+        <TextInput Height="80" Value="{desc}" IsMultiline="true" PlaceholderText="Description (optional)" PlaceholderColor="MediumGrey" Clicked="{descriptionClicked}" />
       </Section>
     </StackPanel>
   </ScrollView>

@@ -1,20 +1,8 @@
 var Observable = require("FuseJS/Observable"),
+    Globl = require('Globl'),
     text = Observable(''),
     results = Observable(),
-    clearEnabled = Observable(false),
-    list = Observable(
-      { name: 'Food' },
-      { name: 'Math' },
-      { name: 'Japan' },
-      { name: 'Health' },
-      { name: 'Beauty' },
-      { name: 'Cocktail' },
-      { name: 'Ramen' },
-      { name: 'Tokyo' },
-      { name: 'Noodles' },
-      { name: 'Cooking' },
-      { name: 'Asian' }
-    );
+    clearEnabled = Observable(false);
 
 module.exports = {
   text: text,
@@ -29,7 +17,7 @@ module.exports = {
       clearEnabled.value = true;
       regexp = new RegExp(args.value, 'gi');
 
-      list.forEach(function(item) {
+      Globl.autocompleteList.forEach(function(item) {
         if (regexp.test(item.name) === true ) {
           results.add(item);
         }
