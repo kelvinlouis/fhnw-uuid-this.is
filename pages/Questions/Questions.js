@@ -113,7 +113,8 @@ module.exports = {
   createQuestion: function(e) {
     var title = e.data.title.value,
         desc = e.data.desc.value,
-        q = new Question(title, desc, 'image4', 'Sam', 'Now');
+        img = e.data.image.value,
+        q = new Question(title, desc, img, 'Sam', 'Now');
 
     questions.insertAt(0, q);
 
@@ -121,6 +122,7 @@ module.exports = {
 
     e.data.title.value = '';
     e.data.desc.value = '';
+    e.data.image.value = false;
 
     activePage.value = pages.getAt(0);
     updateResults();
@@ -128,8 +130,9 @@ module.exports = {
 
   enteredMessage: function(e) {
     var answer = {
-          author: 'Sam',
+          author: 'Me',
           image: 'author4',
+          isMe: true,
           message: e.data.message.value,
           time: 'Just Now'
         };
@@ -181,7 +184,7 @@ module.exports = {
 function Question(title, description, image, author, time) {
   this.title = title;
   this.description = description;
-  this.image = image;
+  this.image = image === true ? "image4" : "";
   this.author = author;
   this.time = time;
   this.tags = ['Japan', 'Tokyo', 'Food'];
@@ -198,6 +201,65 @@ function Question(title, description, image, author, time) {
     time: 'Just Now'
   });
 
+  this.hasImage = image;
+
+  if (image === false && description.length > 0) {
+    this.design = designMap.onlyDescription;
+  } else if (image === true && description.length === 0) {
+    this.design = designMap.onlyImage;
+  } else if (image === false && description.length === 0) {
+    this.design = designMap.nothing;
+  } else {
+    this.design = designMap.both;
+  }
+
   this.answerCount = Observable(this.answers.length);
   this.myQuestion = true;
 }
+
+var designMap = {
+  onlyDescription: {
+    "rows": "80,150,0",
+    "descVisibility": "Visible",
+    "descAniFrom": "0",
+    "descAniTo": "150",
+    "titleAniFrom": "150",
+    "titleAniTo": "400",
+    "imageAniFrom": "0",
+    "imageAniTo": "0",
+    "height": "230"
+  },
+  onlyImage: {
+    "rows": "80,0,200",
+    "descVisibility": "Collapsed",
+    "imageAniFrom": "0",
+    "imageAniTo": "150",
+    "titleAniFrom": "150",
+    "titleAniTo": "400",
+    "descAniFrom": "0",
+    "descAniTo": "0",
+    "height": "280"
+  },
+  nothing: {
+    "rows": "80,0,0",
+    "descVisibility": "Collapsed",
+    "imageAniFrom": "0",
+    "imageAniTo": "0",
+    "titleAniFrom": "0",
+    "titleAniTo": "0",
+    "descAniFrom": "0",
+    "descAniTo": "0",
+    "height": "80"
+  },
+  both: {
+    "rows": "80,150,200",
+    "descVisibility": "Visible",
+    "imageAniFrom": "0",
+    "imageAniTo": "150",
+    "descAniFrom": "150",
+    "descAniTo": "400",
+    "titleAniFrom": "360",
+    "titleAniTo": "440",
+    "height": "430"
+  }
+};

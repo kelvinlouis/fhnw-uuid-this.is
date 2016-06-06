@@ -18,7 +18,7 @@
       <Panel Color="White">
         <ScrollView ux:Name="scrollView">
           <StackPanel>
-            <Panel Height="430" />
+            <Panel Height="{activeQuestion.design.height}" />
             <StackPanel>
               <StackPanel Color="White">
                 <Each Items="{activeQuestion.answers}">
@@ -30,20 +30,20 @@
                 <Panel ux:Name="bottomPlaceholder" />
               </StackPanel>
 
-              <ScrollingAnimation From="0" To="150">
+              <ScrollingAnimation From="{activeQuestion.design.imageAniFrom}" To="{activeQuestion.design.imageAniTo}">
                 <Move Target="imageContainer" Y="-1" RelativeTo="Size"/>
               </ScrollingAnimation>
 
-              <ScrollingAnimation From="0" To="150">
+              <ScrollingAnimation From="{activeQuestion.design.imageAniFrom}" To="{activeQuestion.design.imageAniTo}">
                 <Move Target="image" Y="0.5" RelativeTo="Size" />
                 <Change Target="image.Opacity" Value="0" Easing="QuadraticInOut"/>
               </ScrollingAnimation>
 
-              <ScrollingAnimation From="150" To="400">
+              <ScrollingAnimation From="{activeQuestion.design.descAniFrom}" To="{activeQuestion.design.descAniTo}">
                 <Move Target="description" Y="-1" RelativeTo="Size"/>
               </ScrollingAnimation>
 
-              <ScrollingAnimation From="360" To="440">
+              <ScrollingAnimation From="{activeQuestion.design.titleAniFrom}" To="{activeQuestion.design.titleAniTo}">
                 <Move Target="title" Y="-80"/>
               </ScrollingAnimation>
 
@@ -51,11 +51,11 @@
           </StackPanel>
         </ScrollView>
 
-        <Grid ux:Name="info" Rows="80,150,200" Alignment="Top">
+        <Grid ux:Name="info" Rows="{activeQuestion.design.rows}" Alignment="Top">
           <Panel ux:Name="title" Color="DP900" Padding="10,0,10,0">
             <T TextWrapping="Wrap" Value="{activeQuestion.title}" FontSize="22"/>
           </Panel>
-          <Panel ux:Name="description" Color="DP900" Padding="10,5,10,5">
+          <Panel ux:Name="description" Color="DP900" Padding="10,5,10,5" Visibility="{activeQuestion.design.descVisibility}">
             <T TextWrapping="Wrap" Value="{activeQuestion.description}" />
           </Panel>
           <Panel ux:Name="imageContainer" >

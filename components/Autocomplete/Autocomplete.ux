@@ -1,11 +1,13 @@
-<StackPanel ux:Class="Autocomplete">
+<StackPanel ux:Class="Autocomplete" AccentColor="BrightWhite">
   <JavaScript File="Autocomplete.js" />
   
+  <float4 ux:Property="AccentColor" />
+
   <DockPanel>
-    <TextInput ux:Name="input" ValueChanged="{valueChanged}" Value="{text}" PlaceholderText="Enter a topic without # (optional)" TextColor="BrightWhite" PlaceholderColor="BrightWhite" />
+    <TextInput ux:Name="input" ValueChanged="{valueChanged}" Value="{text}" PlaceholderText="Enter an interest without # (optional)" TextColor="{Property this.AccentColor}" PlaceholderColor="{Property this.AccentColor}" />
 
     <Panel ux:Name="clearButton" Dock="Right" Width="35" Height="35" Opacity="0">
-      <IconTimesCircle Padding="5,20,0,0" TextColor="BrightWhite" Margin="0,-10,0,0" FontSize="20" />
+      <IconTimesCircle Padding="5,20,0,0" TextColor="{Property this.AccentColor}" Margin="0,-10,0,0" FontSize="20" />
       <WhileTrue Value="{clearEnabled}">
         <Change clearButton.Opacity="1" Duration="0.3" />
         <Clicked>
@@ -20,7 +22,7 @@
       <Each Items="{results}">
         <Panel Height="45">
           <Text Value="{name}" Alignment="VerticalCenter" Padding="10,0,0,0" />
-          <Rectangle Width="100%" Height="100%" Color="BrightWhite" Opacity="0.5" />
+          <Rectangle Width="100%" Height="100%" Color="DP100" />
           <Clicked>
             <Callback Handler="{addTag}" />
             <Callback Handler="{clear}" />

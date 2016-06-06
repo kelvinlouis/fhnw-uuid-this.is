@@ -5,8 +5,8 @@
   <JavaScript File="Globl.js" ux:Global="Globl" />
 
   <Font File="Assets/Fonts/fontawesome-webfont.ttf" ux:Global="fa" />
-  <Font File="Assets/Fonts/RobotoCondensed-Bold.ttf" ux:Global="Bold" />
-  <Font File="Assets/Fonts/RobotoCondensed-Regular.ttf" ux:Global="Regular" />
+  <Font File="Assets/Fonts/Roboto-Bold.ttf" ux:Global="Bold" />
+  <Font File="Assets/Fonts/RobotoCondensed-Regular.ttf" ux:Global="RegularCondensed" />
   <Font File="Assets/Fonts/RobotoCondensed-Light.ttf" ux:Global="Light" />
   <ColorPalette />
   <Icons />
@@ -21,9 +21,6 @@
       <iOS.StatusBarConfig Style="Light" />
 
       <PageControl Active="{activePage}" Interaction="None">
-        <!-- <Page ux:Name="Intro" Background="#FFF">
-          <Intro />
-        </Page> -->
         <Page ux:Name="Login" Background="#FFF">
           <Login />
         </Page>

@@ -1,12 +1,14 @@
 <DockPanel ux:Class="QuestionItem" Clicked="{selectQuestion}">
   <!-- Hack to increase click area -->
   <Rectangle Height="100%" Width="100%" Color="BrightWhite" Opacity="0"/>
-  <Rectangle Height="60" Width="60" Dock="Right" Alignment="TopLeft" CornerRadius="5">
-    <ImageFill Source="{DataToResource image}"/>
-  </Rectangle>
+  <WhileTrue Value="{hasImage}">
+    <Rectangle Height="60" Width="60" Dock="Right" Alignment="TopLeft" CornerRadius="5">
+      <ImageFill Source="{DataToResource image}"/>
+    </Rectangle>
+  </WhileTrue>
 
   <StackPanel>
-    <Text TextWrapping="Wrap" Font="Regular" Value="{title}" FontSize="18" Margin="5,0,5,0" />
+    <Text TextWrapping="Wrap" Font="RegularCondensed" Value="{title}" FontSize="18" Margin="5,0,5,0" />
 
     <StackPanel Dock="Bottom" Orientation="Horizontal" Padding="5,5,0,0">
       <IconCommentO FontSize="16" Alignment="Center" TextColor="Grey" Margin="0,0,5,0" />

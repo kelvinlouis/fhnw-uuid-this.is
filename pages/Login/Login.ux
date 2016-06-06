@@ -8,8 +8,8 @@
 
   <Page ux:Name="choose">
     <StackPanel Alignment="Center">
-      <Text Font="Regular" FontSize="64" TextColor="BrightWhite" Value="this.is" Alignment="Center" />
-      <Text Font="Regular" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="BrightWhite" Margin="0,20,0,80" Value="The place where you can ask questions in real time" Alignment="Center" />
+      <Text Font="RegularCondensed" FontSize="64" TextColor="BrightWhite" Value="this.is" Alignment="Center" />
+      <Text Font="RegularCondensed" TextWrapping="Wrap" TextAlignment="Center" FontSize="20" TextColor="BrightWhite" Margin="0,20,0,80" Value="The place where you can ask questions in real time" Alignment="Center" />
       <StackPanel ItemSpacing="10">
         <LightButton Color="FacebookBlue">
           <StackPanel Orientation="Horizontal" Alignment="Center">

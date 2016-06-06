@@ -19,5 +19,4 @@
   <float4 ux:Global="DarkBlack"       ux:Value="#000000"   />
   <float4 ux:Global="FacebookBlue"    ux:Value="#3b5998"   />
   <float4 ux:Global="TwitterBlue"     ux:Value="#4099FF"   />
-
 </Panel>

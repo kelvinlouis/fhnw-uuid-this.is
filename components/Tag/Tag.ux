@@ -1,10 +1,12 @@
-<Rectangle ux:Class="Tag" Color="DP200" Margin="3" Alignment="Center" CornerRadius="10">
+<Rectangle ux:Class="Tag" Color="DP900" Margin="3" Alignment="Center" CornerRadius="10">
   <StackPanel Padding="10,5,10,5" Orientation="Horizontal">
-    <Text>#</Text>
-    <Text Value="{name}"></Text>
+    <Text ux:Name="tagp1" TextColor="BrightWhite">#</Text>
+    <Text ux:Name="tagp2" TextColor="BrightWhite" Value="{name}"></Text>
   </StackPanel>
 
   <WhileTrue Value="{selected}">
     <Change this.Color="DP50" />
+    <Change tagp1.TextColor="DarkBlack" />
+    <Change tagp2.TextColor="DarkBlack" />
   </WhileTrue>
 </Rectangle>

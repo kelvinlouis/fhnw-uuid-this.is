@@ -1,4 +1,0 @@
-<Panel ux:Class="Intro">
-  <Button Text="Intro" Width="120" Margin="0,10">
-  </Button>
-</Panel>

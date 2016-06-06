@@ -2,16 +2,16 @@
   <Panel Dock="Top" Width="100%" Height="0" /> 
   <ScrollView>
     <StackPanel>
-      <StackPanel Padding="10" MinHeight="55" Color="DP400" ItemSpacing="10">
+      <StackPanel Padding="10" MinHeight="55" Color="DP200" ItemSpacing="10">
         <WrapPanel>
           <Each Items="{tags}">
             <Tag Clicked="{removeTag}" />
           </Each>
         </WrapPanel>
-        <Autocomplete />
+        <Autocomplete AccentColor="BrightWhite" />
       </StackPanel>
   
-      <StackPanel Padding="10" ItemSpacing="15">
+      <StackPanel Padding="10" ItemSpacing="20">
         <Each Items="{results}">
           <QuestionItem />
         </Each>
@@ -19,6 +19,6 @@
     </StackPanel>
   </ScrollView>
   <WhileEmpty Items="{results}">
-    <Text TextWrapping="Wrap" Padding="10" TextAlignment="Center" Alignment="Center">There are no questions to show. Please adjust your topics, by adding or removing them.</Text>
+    <Text TextWrapping="Wrap" Padding="10" TextAlignment="Center" Alignment="Center">There are no questions to show. Please adjust your interests, by adding or removing them.</Text>
   </WhileEmpty>
 </DockPanel>

@@ -21,6 +21,7 @@
           <Clicked>
             <Set imagePlaceholder.Visibility="Collapsed" />
             <Set uploadedImage.Visibility="Visible" />
+            <Callback Handler="{showImage}" />
           </Clicked>
         </Rectangle>
       </Section>
@@ -31,6 +32,7 @@
           <Clicked>
             <Set imagePlaceholder.Visibility="Visible" />
             <Set uploadedImage.Visibility="Collapsed" />
+            <Callback Handler="{removeImage}" />
           </Clicked>
         </Circle>
         <!-- <WrapPanel Alignment="Right">
@@ -41,6 +43,7 @@
           <Clicked>
             <Set imagePlaceholder.Visibility="Visible" />
             <Set uploadedImage.Visibility="Collapsed" />
+            <Callback Handler="{removeImage}" />
           </Clicked>
         </Image>
       </Section>

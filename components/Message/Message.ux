@@ -1,14 +1,10 @@
 <Panel ux:Class="Message">
   <Text ux:Class="DateTime" Alignment="VerticalCenter" FontSize="12" TextColor="Grey" />
-  <Text ux:Class="Name" Alignment="VerticalCenter" FontSize="16">
-    <Font File="../../Assets/Fonts/Roboto-Bold.ttf" />
-  </Text>
-  <Text ux:Class="MessageText" TextWrapping="Wrap" FontSize="14">
-    <Font File="../../Assets/Fonts/Lato-Regular.ttf" />
-  </Text>
+  <Text ux:Class="Name" Alignment="VerticalCenter" FontSize="16" Font="Bold" />
+  <Text ux:Class="MessageText" TextWrapping="Wrap" FontSize="14" />
 
   <DockPanel Margin="10">
-    <Circle Dock="Left" Alignment="TopCenter" Width="45" Height="45">
+    <Circle ux:Name="avatar" Dock="Left" Alignment="TopCenter" Width="45" Height="45">
       <ImageFill Source="{DataToResource image}" />
     </Circle>
 

@@ -1,6 +1,7 @@
 var Observable = require('FuseJS/Observable'),
     title = Observable(''),
     desc = Observable(''),
+    image = Observable(false),
     enabledButton = Observable(false),
     descriptionActive = Observable(false),
 
@@ -21,6 +22,7 @@ var Observable = require('FuseJS/Observable'),
 module.exports = {
   title: title,
   desc: desc,
+  image: image,
   titleCounter: titleCounter,
   descCounter: descCounter,
   enabledButton: enabledButton,
@@ -33,5 +35,11 @@ module.exports = {
   },
   descriptionBack: function() {
     descriptionActive.value = false;
+  },
+  showImage: function() {
+    image.value = true;
+  },
+  removeImage: function() {
+    image.value = false;
   }
 };

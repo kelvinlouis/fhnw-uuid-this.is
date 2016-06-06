@@ -4,6 +4,18 @@
             "title": "Where can I eat the best #Ramen #Noodles in #Japan?",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, libero sit amet cursus feugiat, tortor ante imperdiet enim, egestas sagittis urna libero in libero,gestas sagittis urna libero in libero gestas sagittis urna libero in libero.",
             "image": "image1",
+            "hasImage": true,
+            "design": {
+                "rows": "80,150,200",
+                "descVisibility": "Visible",
+                "imageAniFrom": "0",
+                "imageAniTo": "150",
+                "descAniFrom": "150",
+                "descAniTo": "400",
+                "titleAniFrom": "360",
+                "titleAniTo": "440",
+                "height": "430"
+            },
             "author": "Isa",
             "time": "11:00",
             "tags": [
@@ -56,6 +68,18 @@
             "title": "What's the best place to eat #Ramen like a local in #Japan?",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, libero sit amet cursus feugiat, tortor ante imperdiet enim, egestas sagittis urna libero in libero,gestas sagittis urna libero in libero gestas sagittis urna libero in libero.",
             "image": "image2",
+            "hasImage": true,
+            "design": {
+                "rows": "80,150,200",
+                "descVisibility": "Visible",
+                "imageAniFrom": "0",
+                "imageAniTo": "150",
+                "descAniFrom": "150",
+                "descAniTo": "400",
+                "titleAniFrom": "360",
+                "titleAniTo": "440",
+                "height": "430"
+            },
             "author": "Mike",
             "time": "10:00",
             "tags": [
@@ -107,6 +131,18 @@
             "title": "Where is this place in #Japan?",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, libero sit amet cursus feugiat, tortor ante imperdiet enim, egestas sagittis urna libero in libero,gestas sagittis urna libero in libero gestas sagittis urna libero in libero.",
             "image": "image5",
+            "hasImage": true,
+            "design": {
+                "rows": "80,150,200",
+                "descVisibility": "Visible",
+                "imageAniFrom": "0",
+                "imageAniTo": "150",
+                "descAniFrom": "150",
+                "descAniTo": "400",
+                "titleAniFrom": "360",
+                "titleAniTo": "440",
+                "height": "430"
+            },
             "author": "Isa",
             "time": "09:00",
             "tags": [
@@ -145,6 +181,18 @@
             "title": "When is the best time to see Sakura in #Tokyo #Japan?",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, libero sit amet cursus feugiat, tortor ante imperdiet enim, egestas sagittis urna libero in libero,gestas sagittis urna libero in libero gestas sagittis urna libero in libero.",
             "image": "image6",
+            "hasImage": true,
+            "design": {
+                "rows": "80,150,200",
+                "descVisibility": "Visible",
+                "imageAniFrom": "0",
+                "imageAniTo": "150",
+                "descAniFrom": "150",
+                "descAniTo": "400",
+                "titleAniFrom": "360",
+                "titleAniTo": "440",
+                "height": "430"
+            },
             "author": "Kaito",
             "time": "09:00",
             "tags": [
@@ -178,6 +226,18 @@
             "title": "Can someone explain this #Math problem to me?",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, libero sit amet cursus feugiat, tortor ante imperdiet enim, egestas sagittis urna libero in libero,gestas sagittis urna libero in libero gestas sagittis urna libero in libero.",
             "image": "image7",
+            "hasImage": true,
+            "design": {
+                "rows": "80,150,200",
+                "descVisibility": "Visible",
+                "imageAniFrom": "0",
+                "imageAniTo": "150",
+                "descAniFrom": "150",
+                "descAniTo": "400",
+                "titleAniFrom": "360",
+                "titleAniTo": "440",
+                "height": "430"
+            },
             "author": "Kaito",
             "time": "08:30",
             "tags": [
@@ -210,6 +270,18 @@
             "title": "What kind of #Cocktail is this?",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, libero sit amet cursus feugiat, tortor ante imperdiet enim, egestas sagittis urna libero in libero,gestas sagittis urna libero in libero gestas sagittis urna libero in libero.",
             "image": "image8",
+            "hasImage": true,
+            "design": {
+                "rows": "80,150,200",
+                "descVisibility": "Visible",
+                "imageAniFrom": "0",
+                "imageAniTo": "150",
+                "descAniFrom": "150",
+                "descAniTo": "400",
+                "titleAniFrom": "360",
+                "titleAniTo": "440",
+                "height": "430"
+            },
             "author": "Isa",
             "time": "07:30",
             "tags": [
@@ -235,7 +307,7 @@
     ],
     "pages": [
         {
-            "title": "Feed",
+            "title": "this.is",
             "handle": "feed"
         },
         {
@@ -243,11 +315,11 @@
             "handle": "question"
         },
         {
-            "title": "My Questions",
+            "title": "this.is",
             "handle": "myQuestions"
         },
         {
-            "title": "My Answers",
+            "title": "this.is",
             "handle": "myAnswers"
         },
         {
