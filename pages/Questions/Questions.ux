@@ -116,6 +116,7 @@
     <Page ux:Name="question" Color="BrightWhite">
       <Question />
       <WhileActive>
+        <OnBackButton Handler="{goBack}" />
         <Change backButton.Visibility="Visible"/>
         <Change addButton.Visibility="Collapsed"/>
         <Change settingsButton.Visibility="Collapsed"/>
@@ -136,8 +137,8 @@
 
     <Page ux:Name="createQuestion" Color="BrightWhite">
       <CreateQuestion />
-      
       <WhileActive>
+        <OnBackButton Handler="{goBack}" />
         <Change backButton.Visibility="Visible"/>
         <Change addButton.Visibility="Collapsed"/>
         <Change settingsButton.Visibility="Collapsed"/>
