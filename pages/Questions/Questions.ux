@@ -153,9 +153,10 @@
     </Page>
 
     <Page ux:Name="settings" Color="BrightWhite">
-      <Text Alignment="Center">todo: Settings</Text>
+      <Text Alignment="Center">Kein zu entwickelndes Nutzerszenario</Text>
       
       <WhileActive>
+        <OnBackButton Handler="{goBack}" />
         <Change backButton.Visibility="Visible"/>
         <Change addButton.Visibility="Collapsed"/>
         <Change settingsButton.Visibility="Collapsed"/>

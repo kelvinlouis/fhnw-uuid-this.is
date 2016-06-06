@@ -39,7 +39,7 @@ function updateResults() {
   questions.forEach(function(q) {
     var exists = false;
 
-    if ( (q.myQuestion && !q.closed) || addAll) {
+    if ( (q.myQuestion && !q.closed.value) || addAll) {
       results.add(q);
       return;
     }
@@ -114,7 +114,7 @@ module.exports = {
     var title = e.data.title.value,
         desc = e.data.desc.value,
         img = e.data.image.value,
-        q = new Question(title, desc, img, 'Sam', 'Now');
+        q = new Question(title, desc, img, 'Me', 'Now');
 
     questions.insertAt(0, q);
 
@@ -152,6 +152,8 @@ module.exports = {
   closeQuestion: function(e) {
     activeQuestion.value.closed.value = true;
     questions.remove(activeQuestion.value);
+
+    updateResults();
 
     goBack();
   },
